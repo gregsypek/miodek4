@@ -3,7 +3,7 @@
 module.exports = {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx}",
-		"./components/**/*.{js,ts,jsx,tsx})",
+		"./components/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		screens: {
@@ -16,12 +16,14 @@ module.exports = {
 			colors: {
 				orangePrimary: "#A74E12",
 				orangeSecondary: "#DD921D",
+				orangeTertiary: "#F2A603",
 				blackPrimary: "#161513",
 				blackSecondary: "#1C1C22",
 				brownPrimary: "#4D3425",
 				brownSecondary: "#AC8C7D",
 				whitePrimary: "#E6E8EC",
 				whiteSecondary: "#FFFFFF",
+				grayPrimary: "#BDBDBD",
 			},
 		},
 		// fontFamily: {

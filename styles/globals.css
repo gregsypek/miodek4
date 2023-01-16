@@ -9,7 +9,8 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: "Reem Kufi", sans-serif;
-	/* font-family: "reem", sans-serif; */
+
+	background-color: "#E6E8EC";
 }
 
 a {
@@ -33,3 +34,19 @@ a {
 		background: black;
 	}
 } */
+
+/* layot background */
+
+.layout {
+	position: relative;
+	overflow: hidden;
+}
+.layout::after {
+	position: absolute;
+	content: url("../public/hero-gradient.png");
+	z-index: -1;
+	top: 0;
+	left: 54%;
+	width: 100%;
+	height: 100%;
+}

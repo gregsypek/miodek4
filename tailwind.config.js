@@ -24,6 +24,10 @@ module.exports = {
 				whitePrimary: "#E6E8EC",
 				whiteSecondary: "#FFFFFF",
 				grayPrimary: "#BDBDBD",
+				graySecondary: "#828282",
+			},
+			backgroundImage: {
+				"hero-pattern": "url('/hero-gradient.png')",
 			},
 		},
 		// fontFamily: {

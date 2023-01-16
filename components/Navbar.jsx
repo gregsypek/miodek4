@@ -4,35 +4,35 @@ import React from "react";
 
 const Navbar = () => {
 	return (
-		<nav className="relative container mx-auto  ">
+		<nav className="relative container mx-auto px-8 ">
 			<div className="flex items-center justify-between">
 				{/* Logo */}
 				<Link href="/">
 					<Image src="/logo.svg" width={100} height={20} alt="image" />
 				</Link>
 				{/* Menu Items */}
-				<div className=" hidden md:flex  space-x-20 uppercase ">
+				<div className=" hidden md:flex space-x-14 lg:space-x-20 uppercase ">
 					<Link
 						href="#"
-						className="text-orangePrimary hover:text-blackSecondary"
+						className=" text-orangeSecondary  hover:text-blackSecondary"
 					>
 						Home
 					</Link>
 					<Link
 						href="#"
-						className="text-orangePrimary  hover:text-blackSecondary"
+						className="text-orangeSecondary hover:text-blackSecondary"
 					>
 						About
 					</Link>
 					<Link
 						href="#"
-						className="text-orangePrimary hover:text-blackSecondary"
+						className="text-orangeSecondary hover:text-blackSecondary"
 					>
 						Blog
 					</Link>
 					<Link
 						href="#"
-						className="text-orangeSecondary hover:text-blackSecondary"
+						className="text-orangePrimary hover:text-blackSecondary"
 					>
 						Offer
 					</Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
 					Shop now
 				</Link>
 			</div>
-			<hr className="bg-grayPrimary" />
+			<hr className="border-t-grayPrimary" />
 		</nav>
 	);
 };

@@ -11,7 +11,7 @@ const Navbar = () => {
 					<Image src="/logo.svg" width={100} height={20} alt="image" />
 				</Link>
 				{/* Menu Items */}
-				<div className=" hidden md:flex space-x-14 lg:space-x-20 uppercase ">
+				<div className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
 					<Link
 						href="#"
 						className=" text-orangeSecondary  hover:text-blackSecondary"
@@ -39,12 +39,12 @@ const Navbar = () => {
 				</div>
 				<Link
 					href="/"
-					className="hidden md:block py-2 px-7 text-white bg-orangeTertiary rounded-full  hover:bg-orangeSecondary uppercase "
+					className="hidden md:block py-2 px-7 text-white bg-graySecondary rounded-full  hover:bg-orangeSecondary uppercase "
 				>
 					Shop now
 				</Link>
 			</div>
-			<hr className="border-t-grayPrimary" />
+			{/* <hr className="border-t-grayPrimary" /> */}
 		</nav>
 	);
 };

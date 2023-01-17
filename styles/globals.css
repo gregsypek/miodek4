@@ -12,6 +12,9 @@ body {
 
 	background-color: "#E6E8EC";
 }
+* {
+	/* border: 1px solid #000; */
+}
 
 a {
 	color: inherit;
@@ -49,4 +52,50 @@ a {
 	left: 54%;
 	width: 100%;
 	height: 100%;
+}
+
+/* .btn-empty {
+	position: relative;
+	display: block;
+}
+.btn-empty::before {
+	position: absolute;
+	content: url("../public/rapeseed-btn.svg");
+
+	top: -33px;
+	left: -21px;
+	display: block;
+} */
+
+.features__list {
+	justify-content: center;
+	align-items: center;
+	list-style-image: url("../public/circle.svg");
+}
+.features__list li {
+	list-style: none;
+	display: flex;
+	align-content: center;
+}
+.features__list li::before {
+	content: "";
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	margin-right: 1rem;
+
+	background-image: url("../public/circle.svg");
+}
+
+#features picture {
+	position: relative;
+}
+#features picture::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: url("../public/features-gradient.svg");
+	z-index: -1;
+	height: 150%;
+	width: 150%;
 }

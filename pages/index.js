@@ -10,7 +10,7 @@ const Home = () => {
 				id="hero"
 				className="bg-auto bg-no-repeat bg-center  bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')]  h-full"
 			>
-				<div className="container flex items-center px-8 mx-auto pt-10  space-y-0 md:space-y-0 md:flex-row  relative overflow-visible h-[56rem]">
+				<div className="container flex items-center px-4 md:px-8 mx-auto pt-10  space-y-0 md:space-y-0 md:flex-row  relative overflow-visible h-[56rem]">
 					<div className="flex flex-col space-y-8 pl-2 md:pl-16  w-10/12 md:w-5/12 lg:w-6/12 absolute top-24">
 						<h1 className=" text-5xl md:text-6xl lg:text-7xl font-bold text-left text-brownSecondary">
 							Honey Pure
@@ -39,7 +39,7 @@ const Home = () => {
 					></Image> */}
 				</div>
 			</section>
-			<section id="features" className="px-8">
+			<section id="features" className="px-4 md:px-8">
 				{/* <section
 				id="features"
 				className=" bg-[url('/features-gradient.svg')] bg-[length:400px_400px]  md:bg-[length:600px_400px] bg-no-repeat md:bg-left-bottom "
@@ -120,6 +120,68 @@ const Home = () => {
 								</li>
 							</ul>
 						</div>
+					</div>
+				</div>
+			</section>
+			<section id="testimonials" className="">
+				<div className=" px-4 md:px-8 mx-auto mt-32 text-center container space-y-7">
+					<h3 className="text-base uppercase text-orangePrimary text-center   ">
+						Testimonials
+					</h3>
+					<p className="text-base text-graySecondary text-center ">
+						Read What Others Have To Say
+					</p>
+				</div>
+				<div className="container gap-y-20 lg:gap-x-20 px-4 md:px-8 lg:px-28 mt-24 flex flex-col content-center lg:flex-row justify-center flex-wrap mx-auto flex-grow flex-shrink basis-80 items-stretch ">
+					<div className="testimonials__card  flex flex-col items-center p-6 space-y-6 rounded-lg lg:w-1/3 border-2 border-orangeTertiary shadow-md max-w-[350px] bg-whiteSecondary">
+						<Image
+							src="/Rachel.png"
+							width={100}
+							height={100}
+							alt="Rachel"
+							className=" -mt-14 rounded-full"
+						></Image>
+						<h5 className="text-lg font-bold text-orangeTertiary uppercase">
+							Rachel k.
+						</h5>
+						<p className="text-sm text-grayPrimary text-center ">
+							I've been using this honey for years and it never disappoints. The
+							flavor is always spot on and it's great to know that it's all
+							natural and sustainable. Highly recommend!
+						</p>
+					</div>
+					<div className="testimonials__card flex flex-col items-center p-6 space-y-6 rounded-lg lg:w-1/3 border-2 border-orangeTertiary shadow-md max-w-[350px] bg-whiteSecondary">
+						<Image
+							src="/Olivia.png"
+							width={100}
+							height={100}
+							alt="Olivia"
+							className="-mt-14 rounded-full"
+						></Image>
+						<h5 className="text-lg font-bold text-orangeTertiary uppercase">
+							Olivia C.
+						</h5>
+						<p className="text-sm text-grayPrimary text-center ">
+							Lovely. Highly recommended! Thank you for making such a great
+							product!
+						</p>
+					</div>
+					<div className="testimonials__card flex flex-col items-center p-6 space-y-6 rounded-lg lg:w-1/3 border-2 bg-whiteSecondary border-orangeTertiary shadow-md max-w-[350px]">
+						<Image
+							src="/Jessica.png"
+							width={100}
+							height={100}
+							alt="Jessica"
+							className=" -mt-16 rounded-full"
+						></Image>
+						<h5 className="text-lg font-bold text-orangeTertiary uppercase">
+							Jessica S.
+						</h5>
+						<p className="text-sm text-grayPrimary text-center">
+							I love using this honey in my baking and cooking. It adds the
+							perfect touch of sweetness and I feel good about using a product
+							that's good for the environment.
+						</p>
 					</div>
 				</div>
 			</section>

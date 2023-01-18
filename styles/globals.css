@@ -99,3 +99,13 @@ a {
 	height: 150%;
 	width: 150%;
 }
+.testimonials__card:last-child {
+	position: relative;
+}
+.testimonials__card:last-child::after {
+	position: absolute;
+	top: -240px;
+	left: 150px;
+	content: url("../public/testimonials-gradient.svg");
+	z-index: -1;
+}

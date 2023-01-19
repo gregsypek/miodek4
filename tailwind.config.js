@@ -21,6 +21,7 @@ module.exports = {
 				blackSecondary: "#1C1C22",
 				brownPrimary: "#4D3425",
 				brownSecondary: "#AC8C7D",
+				brownTertiary: "#C8B4A2",
 				whitePrimary: "#E6E8EC",
 				whiteSecondary: "#FFFFFF",
 				grayPrimary: "#BDBDBD",

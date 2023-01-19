@@ -14,37 +14,37 @@ const Navbar = () => {
 				<div className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
 					<Link
 						href="#"
-						className=" text-orangeSecondary  hover:text-blackSecondary"
+						className=" text-orangeSecondary  hover:text-blackSecondary nav__link active"
 					>
 						Home
 					</Link>
 					<Link
 						href="#"
-						className="text-orangeSecondary hover:text-blackSecondary"
+						className="text-orangeSecondary hover:text-blackSecondary nav__link"
 					>
 						About
 					</Link>
 					<Link
 						href="#"
-						className="text-orangeSecondary hover:text-blackSecondary"
+						className="text-orangeSecondary hover:text-blackSecondary nav__link"
 					>
 						Blog
 					</Link>
 					<Link
 						href="#"
-						className="text-orangePrimary hover:text-blackSecondary"
+						className="text-orangePrimary hover:text-blackSecondary nav__link"
 					>
 						Offer
 					</Link>
 				</div>
 				<Link
 					href="/"
-					className="hidden md:block py-2 px-7 text-white bg-graySecondary rounded-full  hover:bg-orangeSecondary uppercase "
+					className="hidden md:block py-2 px-7 text-white bg-orangeSecondary rounded-full  hover:bg-orangeTertiary uppercase text-base"
 				>
 					Shop now
 				</Link>
 			</div>
-			<hr className="border-t-grayPrimary " />
+			<hr className="border-t-grayPrimary relative z-[-2]" />
 		</nav>
 	);
 };

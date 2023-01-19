@@ -44,7 +44,7 @@ const Navbar = () => {
 					Shop now
 				</Link>
 			</div>
-			{/* <hr className="border-t-grayPrimary" /> */}
+			<hr className="border-t-grayPrimary " />
 		</nav>
 	);
 };

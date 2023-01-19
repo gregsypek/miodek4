@@ -185,6 +185,41 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
+			<section id="sale" className="mt-44">
+				<div className="container gradient gap-y-20 items-center md:items-stretch py-8 mx-auto mt-32 px-20 flex flex-col md:flex-row justify-between content-center rounded-[25px]">
+					<div className="left flex flex-col justify-evenly gap-y-5 items-center md:items-start ">
+						<h2 className="uppercase font-bold text-orangePrimary text-3xl">
+							Summer Sale
+						</h2>
+						<p className="uppercase font-bold text-whitePrimary text-2xl">
+							20%OFF
+						</p>
+						<p className=" text-base text-orangePrimary ">20 Jan to 14 feb</p>
+					</div>
+					<div className="center">
+						<Image
+							src="/JAR-STRAWBERRY.png"
+							width={370}
+							height={350}
+							className="m-0  md:-mt-24 "
+						></Image>
+					</div>
+					<div className="right flex flex-col justify-evenly gap-y-5 items-center md:items-start">
+						<p className="uppercase font-bold text-whitePrimary text-2xl">
+							RAPESEED HONEY
+						</p>
+						<h2 className="uppercase font-bold text-orangePrimary text-3xl">
+							Bestseller
+						</h2>
+						<Link
+							href="/"
+							className="py-2 px-7 text-blackPrimary bg-whiteSecondary rounded-full hover:bg-whitePrimary uppercase self-center md:self-start"
+						>
+							Shop now
+						</Link>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 };

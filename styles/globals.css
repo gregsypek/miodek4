@@ -109,3 +109,13 @@ a {
 	content: url("../public/testimonials-gradient.svg");
 	z-index: -1;
 }
+.gradient {
+	width: 100vw;
+	height: auto;
+	background: linear-gradient(
+		#ecbd79 0%,
+		rgba(236, 194, 108, 0.99) 26.05%,
+		#eaba86 66.67%,
+		#ecb479 100%
+	);
+}

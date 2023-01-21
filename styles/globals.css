@@ -12,9 +12,9 @@ body {
 
 	background-color: "#E6E8EC";
 }
-* {
-	/* border: 1px solid #000; */
-}
+/* * {
+	border: 1px solid #000;
+} */
 
 a {
 	color: inherit;
@@ -66,6 +66,26 @@ a {
 	left: -21px;
 	display: block;
 } */
+
+/* show circle icon when hovering */
+.nav__link {
+	position: relative;
+}
+.nav__link::after {
+	position: absolute;
+	content: url("../public/circle.svg");
+	bottom: -36px;
+	left: 10px;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity ease 0.3s ease;
+}
+
+.nav__link:hover.nav__link::after,
+.nav__link.active.nav__link::after {
+	opacity: 1;
+}
 
 .features__list {
 	justify-content: center;

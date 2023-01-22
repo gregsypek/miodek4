@@ -30,6 +30,10 @@ module.exports = {
 			backgroundImage: {
 				"hero-pattern": "url('/hero-gradient.png')",
 			},
+			maxWidth: {
+				readable: "50ch",
+				small: "20ch",
+			},
 		},
 		// fontFamily: {
 		// 	reem: "Reem Kufi",

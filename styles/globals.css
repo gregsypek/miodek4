@@ -139,3 +139,139 @@ a {
 		#ecb479 100%
 	);
 }
+/* About-us */
+
+.about-us__picture {
+	position: relative;
+}
+
+.about-us__picture::after {
+	position: absolute;
+	content: "";
+	top: -3%;
+	left: 0%;
+	bottom: -8%;
+	width: 70%;
+	height: auto;
+	border: 2px solid orange;
+	background: white;
+	z-index: -1;
+	border-radius: 25px;
+}
+.about-us__picture::before {
+	position: absolute;
+	content: url("../public/about/about-gradient.svg");
+	top: 30%;
+	left: -40%;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+}
+
+/* about */
+
+.the-movie__info {
+	position: relative;
+}
+.the-movie__info::before {
+	position: absolute;
+	content: "";
+	top: -10%;
+	left: -5%;
+	bottom: -120%;
+	width: 100%;
+	/* height: auto; */
+	border: 2px solid orange;
+	background: white;
+	z-index: -1;
+	border-radius: 25px;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+@media (min-width: 768px) {
+	.the-movie__info::before {
+		top: -21%;
+		left: -22%;
+		width: 97%;
+		height: 135%;
+	}
+}
+@media (min-width: 976px) {
+	.the-movie__info::before {
+		left: -65%;
+		width: 150%;
+		height: 135%;
+	}
+}
+
+.the-movie__screen {
+	position: relative;
+	z-index: 2;
+}
+.the-movie__screen::after {
+	position: absolute;
+	content: "";
+	right: 10%;
+	left: 10%;
+	bottom: -5%;
+	width: 80%;
+	height: 80%;
+	background: linear-gradient(
+		#ecbd79 0%,
+		rgba(236, 194, 108, 0.99) 26.05%,
+		#eaba86 66.67%,
+		#ecb479 100%
+	);
+	z-index: -1;
+	border-radius: 50px;
+}
+@media (min-width: 768px) {
+	.the-movie__screen::after {
+		left: 10%;
+		width: 80%;
+	}
+}
+@media (min-width: 976px) {
+	.the-movie__screen::after {
+		right: 0%;
+		left: 10%;
+		width: 80%;
+		height: 80%;
+	}
+}
+
+@media (min-width: 1440px) {
+	.the-movie__screen img {
+		width: 100%;
+	}
+}
+
+/* map */
+#here {
+	position: relative;
+}
+
+@media (min-width: 768px) {
+	#here::after {
+		position: absolute;
+		content: "";
+		right: 0%;
+		left: 0%;
+		bottom: -5%;
+		width: 100%;
+		height: 25%;
+		background: linear-gradient(
+			#ecbd79 0%,
+			rgba(236, 194, 108, 0.99) 26.05%,
+			#eaba86 66.67%,
+			#ecb479 100%
+		);
+		z-index: -1;
+		border-radius: 25px;
+	}
+}
+@media (min-width: 976px) {
+	.here__iframe {
+		width: calc(100% + 5rem);
+		transform: translateX(-5rem);
+	}
+}

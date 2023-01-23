@@ -10,14 +10,15 @@ function blog() {
 					Last Posts
 				</h3>
 				<ul className="posts__container flex flex-wrap gap-7 justify-center text-graySecondary">
-					<Link
-						href="/"
-						className="post bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md items-center py-7 flex flex-col gap-7 shadow-md"
+					<li
+						className="post bg-whiteSecondary border-2 p-[2%]
+						border-orangeTertiary rounded-md items-center py-7 flex flex-col
+						gap-7 shadow-md"
 					>
 						<Image src="/posts/post1.png" width={351} height={262}></Image>
-						<h4 className="post__title text-orangeTertiary font-bold text tracking-wider">
+						<p className="post__title text-orangeTertiary font-bold text tracking-wider">
 							We have spring now!
-						</h4>
+						</p>
 						<p className="post__date">21 March 2023</p>
 						<p className="post__text max-w-medium text-center">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -25,20 +26,21 @@ function blog() {
 							consequuntur...
 						</p>
 						<Link
-							href="/"
+							href="/blog/1"
 							className=" py-1 px-5 text-graySecondary bg-whiteSecondary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md"
 						>
 							Read more
 						</Link>
-					</Link>
-					<Link
-						href="/"
-						className="post bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md items-center py-7 flex flex-col gap-7 shadow-md"
+					</li>
+					<li
+						className="post bg-whiteSecondary border-2 p-[2%]
+						border-orangeTertiary rounded-md items-center py-7 flex flex-col
+						gap-7 shadow-md"
 					>
 						<Image src="/posts/post2.png" width={351} height={262}></Image>
-						<h4 className="post__title text-orangeTertiary font-bold  tracking-wider">
+						<p className="post__title text-orangeTertiary font-bold  tracking-wider">
 							Delicious Pancakes
-						</h4>
+						</p>
 						<p className="post__date font-light">05 January 2023</p>
 						<p className="post__text max-w-medium text-center">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -46,20 +48,21 @@ function blog() {
 							consequuntur...
 						</p>
 						<Link
-							href="/"
+							href="/blog/1"
 							className=" py-1 px-5 text-graySecondary bg-whiteSecondary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md"
 						>
 							Read more
 						</Link>
-					</Link>
-					<Link
-						href="/"
-						className="post bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md items-center py-7 flex flex-col gap-7 shadow-md"
+					</li>
+					<li
+						className="post bg-whiteSecondary border-2 p-[2%]
+						border-orangeTertiary rounded-md items-center py-7 flex flex-col
+						gap-7 shadow-md"
 					>
 						<Image src="/posts/post3.png" width={351} height={262}></Image>
-						<h4 className="post__title text-orangeTertiary font-bold text tracking-wider">
+						<p className="post__title text-orangeTertiary font-bold text tracking-wider">
 							New Flavor
-						</h4>
+						</p>
 						<p className="post__date">20 September 2022</p>
 						<p className="post__text max-w-medium text-center">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -67,12 +70,12 @@ function blog() {
 							consequuntur...
 						</p>
 						<Link
-							href="/"
+							href="/blog/1"
 							className=" py-1 px-5 text-graySecondary bg-whiteSecondary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md"
 						>
 							Read more
 						</Link>
-					</Link>
+					</li>
 				</ul>
 			</section>
 		</>

@@ -312,3 +312,59 @@ a {
 		/* filter: drop-shadow(5px 5px 4px rgba(236, 194, 108, 0.99)); */
 	}
 }
+
+/* last posts */
+
+.last-posts__item {
+	position: relative;
+}
+
+.last-posts__item::after {
+	position: absolute;
+	content: "";
+	right: -5%;
+	top: -10%;
+	bottom: -5%;
+	width: 56px;
+	height: 120%;
+	background: linear-gradient(
+		#ecbd79 0%,
+		rgba(236, 194, 108, 0.99) 26.05%,
+		#eaba86 66.67%,
+		#ecb479 100%
+	);
+	z-index: -1;
+	border-radius: 50px;
+}
+
+#post {
+	position: relative;
+}
+@media (min-width: 768px) {
+	#post::before {
+		position: absolute;
+		content: "";
+		right: 0%;
+		left: 0%;
+		bottom: -23px;
+		width: 100%;
+		height: 56px;
+		background: linear-gradient(
+			#ecbd79 0%,
+			rgba(236, 194, 108, 0.99) 26.05%,
+			#eaba86 66.67%,
+			#ecb479 100%
+		);
+		z-index: -1;
+		border-radius: 25px;
+	}
+	#post::after {
+		position: absolute;
+		content: url("../public/JAR-FLOWERS.png");
+		right: -35px;
+		bottom: 200px;
+		height: 10%;
+		width: auto;
+		z-index: 1;
+	}
+}

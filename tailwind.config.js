@@ -32,6 +32,7 @@ module.exports = {
 			},
 			maxWidth: {
 				readable: "50ch",
+				medium: "35ch",
 				small: "20ch",
 			},
 		},

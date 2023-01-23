@@ -26,7 +26,7 @@ const Navbar = () => {
 						About
 					</Link>
 					<Link
-						href="#"
+						href="/blog"
 						className="text-orangeSecondary hover:text-blackSecondary nav__link"
 					>
 						Blog

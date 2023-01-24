@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AppWrap from "../wrapper/AppWrap";
 
 const About = () => {
 	return (
@@ -140,4 +141,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default AppWrap(About, "about");

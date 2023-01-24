@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import AppWrap from "../wrapper/AppWrap";
 
 const Home = () => {
 	return (
@@ -223,4 +224,5 @@ const Home = () => {
 		</>
 	);
 };
-export default Home;
+// export default Home;
+export default AppWrap(Home, "hero");

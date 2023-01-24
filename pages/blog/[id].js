@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import AppWrap from "../../wrapper/AppWrap";
 
 const Post = () => {
 	return (
@@ -133,4 +134,4 @@ const Post = () => {
 	);
 };
 
-export default Post;
+export default AppWrap(Post, "blog");

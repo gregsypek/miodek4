@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import AppWrap from "../../wrapper/AppWrap";
 
-function blog() {
+function Blog() {
 	return (
 		<>
 			<section id="posts" className="container mx-auto px-7 mt-44">
@@ -82,4 +83,6 @@ function blog() {
 	);
 }
 
-export default blog;
+// export default blog;
+
+export default AppWrap(Blog, "blog");

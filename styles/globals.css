@@ -9,6 +9,7 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: "Reem Kufi", sans-serif;
+	overflow-x: hidden;
 
 	background-color: "#E6E8EC";
 }
@@ -38,21 +39,37 @@ a {
 	}
 } */
 
-/* layot background */
+/* BACKGROUND LAYOUTS STARTING FROM THE TOP PAGE */
 
-.layout {
-	position: relative;
-	overflow: hidden;
-}
-.layout::after {
+.hero::after {
 	position: absolute;
-	content: url("../public/hero-gradient.png");
+	content: url("../public/hero-gradient.svg");
 	z-index: -1;
-	top: 0;
-	left: 54%;
+	top: -15%;
+	left: 55%;
+	/* width: 100%;
+	height: 100%; */
+}
+.blog::after {
+	position: absolute;
+	content: url("../public/blog-gradient.svg");
+	z-index: -1;
+	top: -35px;
+	right: -50%;
 	width: 100%;
 	height: 100%;
 }
+.about::after {
+	position: absolute;
+	content: url("../public/about-gradient.svg");
+	z-index: -1;
+	top: -10%;
+	right: -55%;
+	width: 90%;
+	height: 100%;
+}
+
+/*  */
 
 /* .btn-empty {
 	position: relative;

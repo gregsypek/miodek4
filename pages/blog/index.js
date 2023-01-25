@@ -28,7 +28,7 @@ function Blog() {
 						</p>
 						<Link
 							href="/blog/1"
-							className=" py-1 px-5 text-graySecondary bg-whiteSecondary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md"
+							className=" py-1 px-5 text-graySecondary bg-whitePrimary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md"
 						>
 							Read more
 						</Link>

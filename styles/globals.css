@@ -83,6 +83,16 @@ a {
 	width: 90%;
 	height: 100%;
 }
+.offer::after {
+	position: absolute;
+	content: url("../public/offer-gradient.svg");
+	z-index: -1;
+	z-index: -1;
+	top: -42%;
+	right: -39%;
+	width: 90%;
+	height: 100%;
+}
 
 footer {
 	position: relative;

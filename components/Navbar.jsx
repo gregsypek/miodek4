@@ -32,7 +32,7 @@ const Navbar = () => {
 						Blog
 					</Link>
 					<Link
-						href="#"
+						href="/offer"
 						className="text-orangePrimary hover:text-blackSecondary nav__link"
 					>
 						Offer

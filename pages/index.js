@@ -9,17 +9,17 @@ const Home = () => {
 			{/* Hero Section */}
 			<section
 				id="hero"
-				className="bg-auto bg-no-repeat bg-center  bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')]  h-full"
+				className="bg-auto bg-no-repeat bg-center bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')]  h-full"
 			>
-				<div className="container flex items-center px-4 md:px-8 mx-auto pt-10  space-y-0 md:space-y-0 md:flex-row relative overflow-visible h-[56rem]">
+				<div className="container flex items-center px-4  mx-auto pt-10  space-y-0 md:space-y-0 md:flex-row relative overflow-visible h-[56rem] ">
 					<div className="flex flex-col space-y-8 pl-2 md:pl-16  w-10/12 md:w-5/12 lg:w-6/12 absolute top-24 z-[-1]">
 						<h1 className=" text-5xl md:text-6xl lg:text-7xl font-bold text-left text-brownSecondary">
 							Honey Pure
 						</h1>
-						<p className="max-w-sm text-left text-xl lg:text-xl text-graySecondary">
+						<p className=" text-left text-xl lg:text-xl text-graySecondary max-w-small">
 							Experience the Sweetness of Pure, Raw Honey
 						</p>
-						<p className="text-left text-xl lg:text-xl text-graySecondary lg:w-7/12">
+						<p className="text-left text-sm lg:text-xl text-graySecondary lg:w-5/12 max-w-sm">
 							Our honey is carefully sourced from local, sustainable bee farms
 							to ensure the highest quality and support for small businesses
 						</p>
@@ -88,10 +88,10 @@ const Home = () => {
 
 				<div className="features__bottom -mt-20 md:mt-16">
 					<div className="container mx-auto flex flex-col md:flex-row items-center">
-						<div className="h-[550px] w-5/12 flex items-center">
+						<div className="h-[550px] w-full lg:w-5/12 flex items-center">
 							<picture className="">
 								<Image
-									className="self-center jar jar--rapeseed relative -z-[1]"
+									className=" w-fullself-center jar jar--rapeseed relative -z-[1]"
 									src="/JAR-FLOWERS.png"
 									width={398}
 									height={377}
@@ -103,20 +103,20 @@ const Home = () => {
 								Features
 							</h3>
 							<ul className="space-y-7 features__list">
-								<li className=" text-base text-graySecondary  lg:text-left max-w-sm ">
+								<li className=" text-base text-brownPrimary  lg:text-left max-w-sm ">
 									100% pure, row honey
 								</li>
-								<li className="text-base text-graySecondary  lg:text-left max-w-sm">
+								<li className="text-base text-brownPrimary lg:text-left max-w-sm">
 									{" "}
 									Sourced from local, sustainable bee farms
 								</li>
-								<li className="text-base text-graySecondary  lg:text-left max-w-sm">
+								<li className="text-base text-brownPrimary  lg:text-left max-w-sm">
 									Never heated of filtered
 								</li>
-								<li className="text-base text-graySecondary  lg:text-left max-w-sm">
+								<li className="text-base text-brownPrimary lg:text-left max-w-sm">
 									Contains beneficial enzymes and antioxidants
 								</li>
-								<li className="text-base text-graySecondary  lg:text-left max-w-sm">
+								<li className="text-base text-brownPrimary  lg:text-left max-w-sm">
 									Delicious taste and versatile uses
 								</li>
 							</ul>

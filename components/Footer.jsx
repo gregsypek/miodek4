@@ -4,10 +4,9 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="container mx-auto pb-7 mt-44">
-			<hr className="border-t-grayPrimary  my-24 " />
-
-			<div className=" flex flex-col md:flex-row flex-wrap lg:px-7  md:justify-evenly gap-8 md:space-y-16 md:space-x-32  md:-mt-16   items-center md:items-baseline ">
+		<footer className=" mx-auto pb-7 mt-44">
+			<hr className=" container mx-auto border-t-grayPrimary  my-24 " />
+			<div className=".footer__container container mx-auto pb-7 flex flex-col md:flex-row flex-wrap lg:px-7  md:justify-evenly gap-8 md:space-y-16 md:space-x-32  md:-mt-16   items-center md:items-baseline ">
 				<div className="flex flex-col space-y-3 items-center md:items-start text-graySecondary lowercase">
 					<Link href="/">
 						<Image
@@ -67,17 +66,17 @@ const Footer = () => {
 					</h3>
 
 					<form>
-						<div className="flex rounded-full bg-brownTertiary text-white  ">
+						<div className="flex rounded-full bg-brownQuaternary text-white  ">
 							<input
 								type="email"
-								className="flex-1 rounded-full focus:outline-none bg-brownTertiary placeholder:text-white py-2 px-7 "
+								className="flex-1 rounded-full focus:outline-none bg-brownQuaternary placeholder:text-brownPrimary py-2 px-7 opacity-50"
 								id=""
 								placeholder="Email Address "
 							/>
 							<input
 								type="submit"
 								value="Submit"
-								className="py-2 px-7 bg-brownPrimary rounded-full  hover:bg-blackPrimary uppercase "
+								className="py-2 px-7 bg-brownPrimary rounded-full  hover:bg-blackPrimary uppercase hover:cursor-pointer"
 							/>
 						</div>
 					</form>

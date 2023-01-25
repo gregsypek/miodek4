@@ -44,12 +44,27 @@ a {
 .hero::after {
 	position: absolute;
 	content: url("../public/hero-gradient.svg");
-	z-index: -1;
-	top: -15%;
-	left: 55%;
-	/* width: 100%;
-	height: 100%; */
+	z-index: -2;
+	top: -1%;
+	left: 47%;
+	width: 255%;
+	height: 128%;
 }
+
+@media (min-width: 768px) {
+	.hero::after {
+		/* position: absolute;
+		content: url("../public/hero-gradient.svg");
+		z-index: -1; */
+		top: -15%;
+		left: 55%;
+		/* width: 100%;
+	height: 100%; */
+		width: 1682px;
+		height: 1882px;
+	}
+}
+
 .blog::after {
 	position: absolute;
 	content: url("../public/blog-gradient.svg");
@@ -69,6 +84,33 @@ a {
 	height: 100%;
 }
 
+footer {
+	position: relative;
+	overflow-y: hidden;
+}
+
+footer::before {
+	position: absolute;
+	content: url("../public/footer-gradient.svg");
+	left: -5rem;
+	top: 0rem;
+	z-index: 1;
+	width: 70%;
+	height: 50%;
+}
+@media (min-width: 768px) {
+	footer::before {
+		/* position: absolute;
+	content: url("../public/footer-gradient.svg"); */
+		left: -30rem;
+		top: -20rem;
+		height: 10%;
+		width: auto;
+		/* z-index: 1; */
+		width: 959px;
+		height: 1242px;
+	}
+}
 /*  */
 
 /* .btn-empty {
@@ -129,14 +171,14 @@ a {
 }
 #features picture::before {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: -70%;
+	right: 150%;
 	content: url("../public/features-gradient.svg");
 	z-index: -1;
-	height: 150%;
-	width: 150%;
+	height: 100%;
+	width: 100%;
 }
-.testimonials__card:last-child {
+/* .testimonials__card:last-child {
 	position: relative;
 }
 .testimonials__card:last-child::after {
@@ -145,7 +187,7 @@ a {
 	left: 150px;
 	content: url("../public/testimonials-gradient.svg");
 	z-index: -1;
-}
+} */
 .gradient {
 	width: 100vw;
 	height: auto;

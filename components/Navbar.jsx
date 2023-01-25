@@ -5,7 +5,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
 	return (
-		<nav className=" relative container mx-auto px-8 ">
+		<nav className=" relative  mx-auto px-8 ">
 			<div className=" sticky flex items-center justify-between">
 				{/* Logo */}
 				<Link href="/">
@@ -40,7 +40,7 @@ const Navbar = () => {
 				</div>
 				<Link
 					href="/"
-					className="hidden md:block py-2 px-7 text-white bg-orangeSecondary rounded-full  hover:bg-orangeTertiary uppercase text-base"
+					className="hidden md:block py-2 px-7 text-white bg-brownPrimary rounded-full  hover:bg-orangeTertiary uppercase text-base"
 				>
 					Shop now
 				</Link>

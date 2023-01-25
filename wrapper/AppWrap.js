@@ -16,9 +16,8 @@ const AppWrap = (Component, classNames = null) =>
 				<main>
 					<Component />
 				</main>
-				<footer>
-					<Footer />
-				</footer>
+
+				<Footer />
 			</div>
 		);
 	};

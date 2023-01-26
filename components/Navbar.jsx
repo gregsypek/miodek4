@@ -15,19 +15,19 @@ const Navbar = () => {
 				<div className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
 					<Link
 						href="/"
-						className=" text-orangeSecondary  hover:text-blackSecondary nav__link active"
+						className=" text-orangePrimary  hover:text-blackSecondary nav__link active"
 					>
 						Home
 					</Link>
 					<Link
 						href="/about"
-						className="text-orangeSecondary hover:text-blackSecondary nav__link"
+						className="text-orangePrimary hover:text-blackSecondary nav__link"
 					>
 						About
 					</Link>
 					<Link
 						href="/blog"
-						className="text-orangeSecondary hover:text-blackSecondary nav__link"
+						className="text-orangePrimary hover:text-blackSecondary nav__link"
 					>
 						Blog
 					</Link>

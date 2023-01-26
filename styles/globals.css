@@ -83,15 +83,43 @@ a {
 	width: 90%;
 	height: 100%;
 }
-.offer::after {
+
+.offer::before {
 	position: absolute;
 	content: url("../public/offer-gradient.svg");
 	z-index: -1;
-	z-index: -1;
-	top: -42%;
-	right: -39%;
+	top: -13%;
+	right: 8%;
 	width: 90%;
 	height: 100%;
+}
+.offer {
+	overflow: hidden;
+}
+.offer::after {
+	position: absolute;
+	content: url("../public/offer-gradient2.svg");
+	z-index: -1;
+
+	bottom: -8%;
+	right: -47%;
+	width: 91%;
+	height: 50%;
+}
+
+@media (min-width: 768px) {
+	.offer::after {
+		bottom: -60%;
+		right: -70%;
+
+		height: 100%;
+	}
+}
+@media (min-width: 768px) {
+	.offer::before {
+		top: -14%;
+		right: -36%;
+	}
 }
 
 footer {

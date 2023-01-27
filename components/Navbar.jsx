@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import {
+	AiOutlineClose,
+	AiOutlineMenu,
+	AiOutlineShopping,
+} from "react-icons/ai";
 
 const Navbar = () => {
 	return (
@@ -38,12 +42,10 @@ const Navbar = () => {
 						Offer
 					</Link>
 				</div>
-				<Link
-					href="/"
-					className="hidden md:block py-2 px-7 text-white bg-brownPrimary rounded-full  hover:bg-orangeTertiary uppercase text-base"
-				>
-					Shop now
+				<Link href="/">
+					<AiOutlineShopping color="#A74E12" size="1.7em" />
 				</Link>
+
 				{/* Hamburger Icon */}
 				<button
 					id="menu-btn"

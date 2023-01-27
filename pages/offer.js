@@ -19,7 +19,7 @@ const Offer = () => {
 				</h1>
 				<div className="offer__box flex justify-left flex-col lg:flex-row  gap-28 lg:gap-32">
 					<div
-						className="offer__jar bg-[#f3ecdd] border-2  p-14
+						className="offer__jar  border-2  p-14
 						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center"
 					>
 						<Image src="/Jar-flowers.png" width={381} height={390}></Image>

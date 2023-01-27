@@ -16,17 +16,19 @@ const Home = () => {
 						<h1 className=" text-5xl md:text-6xl lg:text-7xl font-bold text-left text-brownSecondary">
 							Honey Pure
 						</h1>
-						<p className=" text-left text-xl lg:text-xl text-graySecondary max-w-small">
-							Experience the Sweetness of Pure, Raw Honey
+						<p className=" text-left text-md md:text-xl lg:text-xl text-graySecondary max-w-small">
+							Experience the sweetness of pure, raw honey from local,
+							sustainable bee farms to ensure the highest quality and support
+							for small businesses
 						</p>
-						<p className="text-left text-sm lg:text-xl text-graySecondary lg:w-5/12 max-w-sm">
+						{/* <p className="text-left text-sm lg:text-xl text-graySecondary lg:w-5/12 max-w-sm">
 							Our honey is carefully sourced from local, sustainable bee farms
 							to ensure the highest quality and support for small businesses
-						</p>
+						</p> */}
 						<div className="flex justify-start">
 							<Link
 								href="/"
-								className=" md:hidden py-2 px-7 text-white bg-orangeTertiary rounded-full hover:bg-orangeSecondary uppercase justify-self-start"
+								className=" py-2 px-7 text-white bg-orangeTertiary rounded-full hover:bg-orangeSecondary uppercase justify-self-start absolute index-2"
 							>
 								Shop now
 							</Link>

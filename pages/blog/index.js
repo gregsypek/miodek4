@@ -14,11 +14,11 @@ function Blog() {
 					<li
 						className="post bg-whiteSecondary border-2 p-[2%]
 						border-orangeTertiary rounded-md items-center py-7 flex flex-col
-						gap-7 shadow-md"
+						gap-7 shadow-md "
 					>
 						<Image src="/posts/post1.png" width={351} height={262}></Image>
 						<p className="post__title text-orangeTertiary font-bold text tracking-wider">
-							We have spring now!
+							We have spring now!!
 						</p>
 						<p className="post__date">21 March 2023</p>
 						<p className="post__text max-w-medium text-center">
@@ -36,7 +36,7 @@ function Blog() {
 					<li
 						className="post bg-whiteSecondary border-2 p-[2%]
 						border-orangeTertiary rounded-md items-center py-7 flex flex-col
-						gap-7 shadow-md"
+						gap-7 shadow-md "
 					>
 						<Image src="/posts/post2.png" width={351} height={262}></Image>
 						<p className="post__title text-orangeTertiary font-bold  tracking-wider">

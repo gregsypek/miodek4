@@ -19,7 +19,7 @@ const Offer = () => {
 				</h1>
 				<div className="offer__box flex justify-left flex-col lg:flex-row  gap-28 lg:gap-32">
 					<div
-						className="offer__jar bg-[#E2E5E8] border-2  p-14
+						className="offer__jar bg-[#f3ecdd] border-2  p-14
 						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center"
 					>
 						<Image src="/Jar-flowers.png" width={381} height={390}></Image>
@@ -94,20 +94,20 @@ const Offer = () => {
 				</div>
 				<div className="offer__miniature flex mt-20 gap-4 ">
 					<span
-						className="offer__jar bg-[#E2E5E8] border-2 p-[3%] 
-						border-orangeTertiary rounded-xl  grid place-items-center"
+						className="offer__jar bg-whiteSecondary border-2 p-[3%] 
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
 					>
 						<Image src="/Jar-flowers.png" width={88} height={91}></Image>
 					</span>
 					<span
-						className="offer__jar bg-[#E2E5E8] border-2 p-[3%] 
-						border-orangeTertiary rounded-xl  grid place-items-center"
+						className="offer__jar bg-whiteSecondary border-2 p-[3%] 
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
 					>
 						<Image src="/Jar-flowers.png" width={88} height={91}></Image>
 					</span>
 					<span
-						className="offer__jar bg-[#EABA85] border-2 p-[3%] 
-						border-orangeTertiary rounded-xl  grid place-items-center"
+						className="offer__jar bg-orangeQuaternary border-2 p-[3%] 
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
 					>
 						<Image src="/Jar-flowers.png" width={88} height={91}></Image>
 					</span>
@@ -119,8 +119,8 @@ const Offer = () => {
 					<div className="flex gap-6">
 						<div className="offer__like flex flex-col mt-20  ">
 							<span
-								className="offer__jar bg-[#E2E5E8] py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px]"
+								className="offer__jar bg-grayTertiary py-11 px-14
+		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
 							>
 								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
 							</span>
@@ -134,8 +134,8 @@ const Offer = () => {
 						</div>
 						<div className="offer__like flex flex-col mt-20  ">
 							<span
-								className="offer__jar bg-[#E2E5E8] py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px]"
+								className="offer__jar bg-grayTertiary py-11 px-14
+		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
 							>
 								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
 							</span>
@@ -149,8 +149,8 @@ const Offer = () => {
 						</div>
 						<div className="offer__like flex flex-col mt-20  ">
 							<span
-								className="offer__jar bg-[#E2E5E8] py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px]"
+								className="offer__jar bg-grayTertiary py-11 px-14
+		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
 							>
 								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
 							</span>
@@ -164,8 +164,8 @@ const Offer = () => {
 						</div>
 						<div className="offer__like flex flex-col mt-20  ">
 							<span
-								className="offer__jar bg-[#E2E5E8] py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px]"
+								className="offer__jar bg-grayTertiary py-11 px-14
+		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
 							>
 								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
 							</span>

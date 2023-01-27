@@ -66,18 +66,18 @@ const Post = () => {
 					<ul className="last-posts__list flex flex-col gap-7">
 						<li
 							className="last-posts__item bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-xl items-center  shadow-md "
+						border-orangeTertiary rounded-xl items-center  shadow-md hover:bg-orangeQuaternary hover:cursor-pointer"
 						>
 							<Link
 								href="/blog/1"
 								className=" flex flex-row
-						gap-7"
+						gap-7 "
 							>
 								<Image src="/posts/post1.png" width={140} height={109}></Image>
 
 								<div className="last-posts__info flex flex-col justify-between">
 									<p className="post__title text-orangeTertiary font-bold text-lg tracking-wider">
-										We have spring now!
+										We have spring now!?
 									</p>
 									<p className="post__date text-sm text-graySecondary">
 										21 March 2023
@@ -87,7 +87,7 @@ const Post = () => {
 						</li>
 						<li
 							className="last-posts__item bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-xl items-center  shadow-md "
+						border-orangeTertiary rounded-xl items-center  shadow-md hover:bg-orangeQuaternary hover:cursor-pointer"
 						>
 							<Link
 								href="/blog/2"
@@ -108,7 +108,7 @@ const Post = () => {
 						</li>
 						<li
 							className="last-posts__item bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-xl items-center  shadow-md "
+						border-orangeTertiary rounded-xl items-center  shadow-md hover:bg-orangeQuaternary hover:cursor-pointer"
 						>
 							<Link
 								href="/blog/3"

@@ -380,7 +380,7 @@ footer::before {
 }
 
 @media (min-width: 1440px) {
-	#posts::before {
+	/* #posts::before {
 		position: absolute;
 		content: "";
 		right: 0%;
@@ -396,7 +396,7 @@ footer::before {
 		);
 		z-index: -1;
 		border-radius: 25px;
-	}
+	} */
 	#posts::after {
 		position: absolute;
 		content: url("../public/posts/JAR-ACACIA--small.png");
@@ -437,9 +437,9 @@ footer::before {
 #post {
 	position: relative;
 }
-@media (min-width: 768px) {
+@media (min-width: 976px) {
 	#post::before {
-		position: absolute;
+		/* position: absolute;
 		content: "";
 		right: 0%;
 		left: 0%;
@@ -453,12 +453,17 @@ footer::before {
 			#ecb479 100%
 		);
 		z-index: -1;
-		border-radius: 25px;
+		border-radius: 25px; */
+		position: absolute;
+		content: url("../public/about/about-gradient2.svg");
+		right: 20px;
+		top: 79%;
+		z-index: 1;
 	}
 	#post::after {
 		position: absolute;
 		content: url("../public/JAR-FLOWERS.png");
-		right: -35px;
+		right: 0;
 		bottom: 200px;
 		height: 10%;
 		width: auto;

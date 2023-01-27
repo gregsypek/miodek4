@@ -17,6 +17,7 @@ module.exports = {
 				orangePrimary: "#A74E12",
 				orangeSecondary: "#DD921D",
 				orangeTertiary: "#F2A603",
+				orangeQuaternary: "#f3ecdd",
 				blackPrimary: "#161513",
 				blackSecondary: "#1C1C22",
 				brownPrimary: "#4D3425",
@@ -27,6 +28,7 @@ module.exports = {
 				whiteSecondary: "#FFFFFF",
 				grayPrimary: "#BDBDBD",
 				graySecondary: "#828282",
+				grayTertiary: "#f1f0f0",
 			},
 			backgroundImage: {
 				"hero-pattern": "url('/hero-gradient.png')",

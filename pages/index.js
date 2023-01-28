@@ -9,10 +9,10 @@ const Home = () => {
 			{/* Hero Section */}
 			<section
 				id="hero"
-				className="bg-auto bg-no-repeat bg-center bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')]  h-full"
+				className="bg-auto bg-no-repeat bg-center bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')] h-full"
 			>
 				<div className="container flex items-center px-4  mx-auto pt-10  space-y-0 md:space-y-0 md:flex-row relative overflow-visible h-[56rem] ">
-					<div className="flex flex-col space-y-8 pl-2 md:pl-16  w-10/12 md:w-5/12 lg:w-6/12 absolute top-24 z-[-1]">
+					<div className="flex flex-col space-y-8 pl-2 md:pl-16  w-10/12 md:w-5/12 lg:w-6/12 absolute top-24 ">
 						<h1 className=" text-5xl md:text-6xl lg:text-7xl font-bold text-left text-brownSecondary">
 							Honey Pure
 						</h1>
@@ -25,14 +25,21 @@ const Home = () => {
 							Our honey is carefully sourced from local, sustainable bee farms
 							to ensure the highest quality and support for small businesses
 						</p> */}
-						<div className="flex justify-start">
+						<Link
+							href="/"
+							className="py-2 px-7 text-white relative bg-orangeTertiary rounded-full hover:bg-orangeSecondary hover:cursor-pointer uppercase self-start"
+						>
+							Shop now
+						</Link>
+
+						{/* <div className="flex justify-start">
 							<Link
 								href="/"
-								className=" py-2 px-7 text-white bg-orangeTertiary rounded-full hover:bg-orangeSecondary uppercase justify-self-start absolute index-2"
+								className=" block py-2 px-7 text-white bg-orangeTertiary rounded-full hover:bg-orangePrimary hover:cursor-pointer uppercase justify-self-start absolute index-2"
 							>
 								Shop now
 							</Link>
-						</div>
+						</div> */}
 					</div>
 					{/* <Image
 						src="/hero-bg.png"
@@ -82,7 +89,7 @@ const Home = () => {
 				<div className="container mx-auto mt-2 md:mt-12  flex justify-center">
 					<Link
 						href="/"
-						className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full mb-44  hover:bg-orangeSecondary hover:text-whitePrimary uppercase border  border-graySecondary"
+						className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full mb-44   hover:text-whiteSecondary hover:bg-graySecondary uppercase border  border-graySecondary"
 					>
 						View our pricing
 					</Link>
@@ -188,7 +195,7 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<section id="sale" className="mt-56">
+			<section id="sale" className="mt-56 container px-7 mx-auto ">
 				<div className="container gradient gap-y-20 items-center md:items-stretch py-8 mx-auto mt-32 px-20 flex flex-col md:flex-row justify-between content-center rounded-[25px]">
 					<div className="left flex flex-col justify-evenly gap-y-5 items-center md:items-start ">
 						<h2 className="uppercase font-bold text-orangePrimary text-3xl">

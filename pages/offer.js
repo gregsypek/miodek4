@@ -17,12 +17,32 @@ const Offer = () => {
 					Our honey comes in a variety of sizes and flavors, so you can find the
 					perfect option for your needs.
 				</h1>
-				<div className="offer__box flex justify-left flex-col lg:flex-row  gap-28 lg:gap-32">
+				<div className="offer__box flex justify-left flex-col lg:flex-row  gap-24 lg:gap-16">
 					<div
 						className="offer__jar  border-2  p-14
 						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center"
 					>
 						<Image src="/Jar-flowers.png" width={381} height={390}></Image>
+					</div>
+					<div className="offer__miniature flex lg:flex-col lg:justify-center gap-4 ">
+						<span
+							className="offer__jar bg-whiteSecondary border-2 p-[3%] 
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
+						>
+							<Image src="/Jar-flowers.png" width={88} height={91}></Image>
+						</span>
+						<span
+							className="offer__jar bg-whiteSecondary border-2 p-[3%] 
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
+						>
+							<Image src="/Jar-flowers.png" width={88} height={91}></Image>
+						</span>
+						<span
+							className="offer__jar bg-orangeQuaternary border-2 p-[3%] 
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
+						>
+							<Image src="/Jar-flowers.png" width={88} height={91}></Image>
+						</span>
 					</div>
 					<div className="offer__info flex flex-col space-y-4 lg:w-5/12 justify-start">
 						<h3 className="text-base uppercase text-orangePrimary text-left">
@@ -92,26 +112,7 @@ const Offer = () => {
 						</div>
 					</div>
 				</div>
-				<div className="offer__miniature flex mt-20 gap-4 ">
-					<span
-						className="offer__jar bg-whiteSecondary border-2 p-[3%] 
-						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
-					>
-						<Image src="/Jar-flowers.png" width={88} height={91}></Image>
-					</span>
-					<span
-						className="offer__jar bg-whiteSecondary border-2 p-[3%] 
-						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
-					>
-						<Image src="/Jar-flowers.png" width={88} height={91}></Image>
-					</span>
-					<span
-						className="offer__jar bg-orangeQuaternary border-2 p-[3%] 
-						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer"
-					>
-						<Image src="/Jar-flowers.png" width={88} height={91}></Image>
-					</span>
-				</div>
+
 				<div className="offer__likes mt-36">
 					<h3 className="text-base uppercase text-orangePrimary text-center ">
 						You may also like

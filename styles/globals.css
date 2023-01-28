@@ -118,7 +118,13 @@ a {
 	.offer::after {
 		bottom: 17%;
 		left: -70%;
-		height: 100%;
+		height: 97%;
+		width: 83%;
+	}
+}
+@media (min-width: 976px) {
+	.offer::after {
+		bottom: 60%;
 	}
 }
 @media (min-width: 768px) {
@@ -127,32 +133,35 @@ a {
 		right: -54%;
 	}
 }
-
 footer {
-	position: relative;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
-footer::before {
+.footer__container {
+	position: relative;
+	/* overflow-y: hidden; */
+}
+
+.footer__container::before {
 	position: absolute;
 	content: url("../public/footer-gradient.svg");
 	left: -5rem;
-	top: 0rem;
+	top: -10rem;
 	z-index: 1;
 	width: 70%;
 	height: 50%;
 }
 @media (min-width: 768px) {
-	footer::before {
+	.footer__container::before {
 		/* position: absolute;
 	content: url("../public/footer-gradient.svg"); */
-		left: -30rem;
-		top: -20rem;
+		left: -20%;
+		top: -46%;
 		height: 10%;
 		width: auto;
 		/* z-index: 1; */
-		width: 959px;
-		height: 1242px;
+		width: 400px;
+		height: auto;
 	}
 }
 /*  */
@@ -232,7 +241,7 @@ footer::before {
 	z-index: -1;
 } */
 .gradient {
-	width: 100vw;
+	/* width: 100vw; */
 	height: auto;
 	background: linear-gradient(
 		#ecbd79 0%,

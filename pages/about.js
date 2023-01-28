@@ -22,7 +22,7 @@ const About = () => {
 					></Image>
 				</div>
 				<div className="about-us__text  w-full flex justify-center lg:w-1/2 max-w-readable ">
-					<p className="text-base text-graySecondary text-center xl:text-left  leading-7 p-10 ">
+					<p className="text-base text-brownPrimary text-center xl:text-left  leading-7 p-10 ">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
 						temporibus impedit facilis adipisci, veritatis eligendi vero id?
 						Sequi qui possimus pariatur. Quibusdam eos consequatur in quisquam
@@ -38,7 +38,7 @@ const About = () => {
 					See our work
 				</h3> */}
 				<ul className="cards container flex flex-wrap gap-8 flex-col md:flex-row items-center md:justify-center ">
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left  ">
 							See our work
 						</h3>
@@ -49,7 +49,7 @@ const About = () => {
 							className="bg-center object-cover h-96 w-full"
 						></Image>
 					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left ">
 							&nbsp;
 						</h3>
@@ -60,7 +60,7 @@ const About = () => {
 							className="bg-center object-cover h-96 w-full"
 						></Image>
 					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left ">
 							&nbsp;
 						</h3>
@@ -71,7 +71,7 @@ const About = () => {
 							className="bg-center object-cover h-96 w-full"
 						></Image>
 					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeTertiary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left ">
 							&nbsp;
 						</h3>
@@ -105,7 +105,7 @@ const About = () => {
 						</p>
 						<Link
 							href="/"
-							className=" py-2 px-7 text-white bg-orangeTertiary rounded-full  hover:bg-orangeSecondary uppercase text-base self-start shadow-md"
+							className=" py-2 px-7 text-white bg-orangePrimary rounded-full  hover:bg-orangeSecondary uppercase text-base self-start shadow-md"
 						>
 							Shop now
 						</Link>
@@ -124,7 +124,7 @@ const About = () => {
 						className="hidden md:block w-3/5"
 					></Image>
 				</div>
-				<div className="here__map bg-whiteSecondary  border-2 p-[15px] pt-[30px] border-orangeTertiary rounded-xl w-full md:w-2/3 shadow-md">
+				<div className="here__map bg-whiteSecondary  border-2 p-[15px] pt-[30px] border-orangePrimary rounded-xl w-full md:w-2/3 shadow-md">
 					<h3 className="text-base uppercase text-orangePrimary self-start   py-2">
 						We are here
 					</h3>

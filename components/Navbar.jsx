@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import React from "react";
 import {
@@ -7,7 +8,24 @@ import {
 	AiOutlineShopping,
 } from "react-icons/ai";
 
+const navigationRoutes = ["home", "about", "blog", "offer"];
+
 const Navbar = () => {
+	const router = useRouter();
+	function NavigationLink({ href, text, router }) {
+		const isActive = router.asPath === (href === "/home" ? "/" : href);
+		return (
+			<Link
+				href={href === "/home" ? "/" : href}
+				passHref
+				className={`${
+					isActive && "active"
+				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link`}
+			>
+				{text}
+			</Link>
+		);
+	}
 	return (
 		<nav className=" relative  mx-auto px-8 ">
 			<div className=" sticky flex items-center justify-between">
@@ -16,37 +34,21 @@ const Navbar = () => {
 					<Image src="/logo.svg" width={100} height={20} alt="image" />
 				</Link>
 				{/* Menu Items */}
-				<div className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
-					<Link
-						href="/"
-						className=" text-orangePrimary  hover:text-blackSecondary nav__link active"
-					>
-						Home
-					</Link>
-					<Link
-						href="/about"
-						className="text-orangePrimary hover:text-blackSecondary nav__link"
-					>
-						About
-					</Link>
-					<Link
-						href="/blog"
-						className="text-orangePrimary hover:text-blackSecondary nav__link"
-					>
-						Blog
-					</Link>
-					<Link
-						href="/offer"
-						className="text-orangePrimary hover:text-blackSecondary nav__link"
-					>
-						Offer
-					</Link>
-				</div>
+				<nav className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
+					{navigationRoutes.map((singleRoute) => {
+						return (
+							<NavigationLink
+								key={singleRoute}
+								href={`/${singleRoute}`}
+								text={singleRoute}
+								router={router}
+							/>
+						);
+					})}
+				</nav>
 				<Link href="/">
 					<AiOutlineShopping color="#A74E12" size="1.7em" />
 				</Link>
-
-				{/* Hamburger Icon */}
 				<button
 					id="menu-btn"
 					className="open block cursor-pointer md:hidden  focus:outline-none"

@@ -7,17 +7,7 @@ const AppWrap = (Component, classNames = null) =>
 	function HOC() {
 		return (
 			<div className={`relative ${classNames}`}>
-				<Head>
-					<title>Honey_v4</title>
-				</Head>
-				<header>
-					<Navbar />
-				</header>
-				<main>
-					<Component />
-				</main>
-
-				<Footer />
+				<Component />
 			</div>
 		);
 	};

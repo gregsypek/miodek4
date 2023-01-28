@@ -57,7 +57,8 @@ a {
 		content: url("../public/hero-gradient.svg");
 		z-index: -1; */
 		top: -15%;
-		left: 55%;
+		/* top: -15%; */
+		left: 60%;
 		/* width: 100%;
 	height: 100%; */
 		width: 1682px;
@@ -69,56 +70,61 @@ a {
 	position: absolute;
 	content: url("../public/blog-gradient.svg");
 	z-index: -1;
-	top: -35px;
-	right: -50%;
+	top: -335px;
+	right: -65%;
 	width: 100%;
 	height: 100%;
 }
 .about::after {
 	position: absolute;
-	content: url("../public/about-gradient.svg");
-	z-index: -1;
+	content: url("../public/about-gradient2.svg");
+	/* z-index: -1;
 	top: -10%;
 	right: -55%;
 	width: 90%;
-	height: 100%;
+	height: 100%; */
+	z-index: -2;
+	top: -70rem;
+	right: 10rem;
+	width: 2000px;
+	height: 5000px;
+	transform: rotate(57deg);
 }
 
 .offer::before {
 	position: absolute;
 	content: url("../public/offer-gradient.svg");
 	z-index: -1;
-	top: -13%;
-	right: 8%;
+	top: -25%;
+	right: -10%;
 	width: 90%;
 	height: 100%;
 }
-.offer {
+/* .offer {
 	overflow: hidden;
-}
+} */
 .offer::after {
 	position: absolute;
 	content: url("../public/offer-gradient2.svg");
 	z-index: -1;
 
-	bottom: -8%;
+	/* bottom: -8%; */
 	right: -47%;
 	width: 91%;
-	height: 50%;
+	/* height: 50%; */
 }
 
 @media (min-width: 768px) {
 	.offer::after {
-		bottom: -60%;
-		right: -70%;
-
+		bottom: 17%;
+		left: -70%;
 		height: 100%;
 	}
 }
 @media (min-width: 768px) {
 	.offer::before {
-		top: -14%;
-		right: -36%;
+		top: -21%;
+		right: -54%;
 	}
 }
 
@@ -164,7 +170,7 @@ footer::before {
 	display: block;
 } */
 
-/* show circle icon when hovering */
+/* show circle icon when active */
 .nav__link {
 	position: relative;
 }
@@ -179,7 +185,6 @@ footer::before {
 	transition: opacity ease 0.3s ease;
 }
 
-.nav__link:hover.nav__link::after,
 .nav__link.active.nav__link::after {
 	opacity: 1;
 }
@@ -256,7 +261,7 @@ footer::before {
 	z-index: -1;
 	border-radius: 25px;
 }
-.about-us__picture::before {
+/* .about-us__picture::before {
 	position: absolute;
 	content: url("../public/about/about-gradient.svg");
 	top: 30%;
@@ -264,7 +269,7 @@ footer::before {
 	z-index: -1;
 	height: 100%;
 	width: 100%;
-}
+} */
 
 /* about */
 
@@ -419,7 +424,7 @@ footer::before {
 .last-posts__item::after {
 	position: absolute;
 	content: "";
-	right: -5%;
+	left: -5%;
 	top: -10%;
 	bottom: -5%;
 	width: 56px;

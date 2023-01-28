@@ -38,7 +38,7 @@ const About = () => {
 					See our work
 				</h3> */}
 				<ul className="cards container flex flex-wrap gap-8 flex-col md:flex-row items-center md:justify-center ">
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left  ">
 							See our work
 						</h3>
@@ -49,7 +49,7 @@ const About = () => {
 							className="bg-center object-cover h-96 w-full"
 						></Image>
 					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left ">
 							&nbsp;
 						</h3>
@@ -60,7 +60,7 @@ const About = () => {
 							className="bg-center object-cover h-96 w-full"
 						></Image>
 					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left ">
 							&nbsp;
 						</h3>
@@ -71,7 +71,7 @@ const About = () => {
 							className="bg-center object-cover h-96 w-full"
 						></Image>
 					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangePrimary rounded-md w-full md:w-5/12">
+					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
 						<h3 className="text-base uppercase text-orangePrimary text-left ">
 							&nbsp;
 						</h3>
@@ -105,7 +105,7 @@ const About = () => {
 						</p>
 						<Link
 							href="/"
-							className=" py-2 px-7 text-white bg-orangePrimary rounded-full  hover:bg-orangeSecondary uppercase text-base self-start shadow-md"
+							className="py-2 px-7 text-white relative bg-orangeTertiary rounded-full hover:bg-orangeSecondary hover:cursor-pointer uppercase self-start"
 						>
 							Shop now
 						</Link>
@@ -121,7 +121,7 @@ const About = () => {
 						src="/JAR-STRAWBERRY.png"
 						width={363}
 						height={344}
-						className="hidden md:block w-3/5"
+						className="hidden lg:block w-4/5"
 					></Image>
 				</div>
 				<div className="here__map bg-whiteSecondary  border-2 p-[15px] pt-[30px] border-orangePrimary rounded-xl w-full md:w-2/3 shadow-md">

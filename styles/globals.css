@@ -75,20 +75,42 @@ a {
 	width: 100%;
 	height: 100%;
 }
+/* .about {
+	overflow: hidden;
+} */
 .about::after {
 	position: absolute;
 	content: url("../public/about-gradient2.svg");
-	/* z-index: -1;
-	top: -10%;
-	right: -55%;
-	width: 90%;
-	height: 100%; */
+	/* z-index: -2;
+
+	top: -11%;
+	right: 47rem;
+	width: 117%;
+	height: 65%;
+	transform: rotate(36deg); */
 	z-index: -2;
 	top: -70rem;
 	right: 10rem;
 	width: 2000px;
-	height: 5000px;
+	height: 4800px;
 	transform: rotate(57deg);
+}
+.about::before {
+	position: absolute;
+	content: url("../public/about-gradient2.svg");
+
+	z-index: -2;
+	top: 43%;
+	left: -51rem;
+	width: 106%;
+	height: 56%;
+	transform: rotate(133deg);
+}
+@media (min-width: 768px) {
+	.about::before {
+		left: -20rem;
+		width: 88%;
+	}
 }
 
 .offer::before {
@@ -319,7 +341,7 @@ footer {
 	position: relative;
 	z-index: 2;
 }
-.the-movie__screen::after {
+/* .the-movie__screen::after {
 	position: absolute;
 	content: "";
 	right: 10%;
@@ -349,7 +371,7 @@ footer {
 		width: 80%;
 		height: 80%;
 	}
-}
+} */
 
 @media (min-width: 1440px) {
 	.the-movie__screen img {
@@ -358,12 +380,12 @@ footer {
 }
 
 /* map */
-#here {
+/* #here {
 	position: relative;
-}
+} */
 
 @media (min-width: 768px) {
-	#here::after {
+	/* #here::after {
 		position: absolute;
 		content: "";
 		right: 0%;
@@ -379,7 +401,7 @@ footer {
 		);
 		z-index: -1;
 		border-radius: 25px;
-	}
+	} */
 }
 @media (min-width: 976px) {
 	.here__iframe {

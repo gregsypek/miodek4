@@ -1,12 +1,17 @@
+import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import AppWrap from "../wrapper/AppWrap";
 
-const Home = () => {
+import { client } from "../lib/client";
+import HeroBanner from "../components/HeroBanner";
+
+const Home = ({ bannerData }) => {
 	return (
 		<>
 			{/* Hero Section */}
+
 			<section
 				id="hero"
 				className="bg-auto bg-no-repeat bg-center bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')] h-full"
@@ -104,6 +109,7 @@ const Home = () => {
 									src="/JAR-FLOWERS.png"
 									width={398}
 									height={377}
+									alt="jar with flowers honey"
 								></Image>
 							</picture>
 						</div>
@@ -195,43 +201,17 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<section id="sale" className="mt-56 container px-7 mx-auto ">
-				<div className="container gradient gap-y-20 items-center md:items-stretch py-8 mx-auto mt-32 px-20 flex flex-col md:flex-row justify-between content-center rounded-[25px]">
-					<div className="left flex flex-col justify-evenly gap-y-5 items-center md:items-start ">
-						<h2 className="uppercase font-bold text-orangePrimary text-3xl">
-							Summer Sale
-						</h2>
-						<p className="uppercase font-bold text-whitePrimary text-2xl">
-							20%OFF
-						</p>
-						<p className=" text-base text-orangePrimary ">20 Jan to 14 feb</p>
-					</div>
-					<div className="center">
-						<Image
-							src="/JAR-STRAWBERRY.png"
-							width={370}
-							height={350}
-							className="m-0  md:-mt-24 "
-						></Image>
-					</div>
-					<div className="right flex flex-col justify-evenly gap-y-5 items-center md:items-start">
-						<p className="uppercase font-bold text-whitePrimary text-2xl">
-							RAPESEED HONEY
-						</p>
-						<h2 className="uppercase font-bold text-orangePrimary text-3xl">
-							Bestseller
-						</h2>
-						<Link
-							href="/"
-							className="py-2 px-7 text-blackPrimary bg-whiteSecondary rounded-full hover:bg-whitePrimary uppercase self-center md:self-start"
-						>
-							Shop now
-						</Link>
-					</div>
-				</div>
-			</section>
+			<HeroBanner heroBanner={bannerData.length && bannerData[0]} />
 		</>
 	);
+};
+export const getServerSideProps = async () => {
+	const bannerQuery = '*[_type == "banner"]';
+	const bannerData = await client.fetch(bannerQuery);
+
+	return {
+		props: { bannerData },
+	};
 };
 // export default Home;
 export default AppWrap(Home, "hero");

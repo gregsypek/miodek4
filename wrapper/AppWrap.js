@@ -1,13 +1,11 @@
 import React from "react";
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const AppWrap = (Component, classNames = null) =>
-	function HOC() {
+	function HOC(props) {
+		// console.log("🚀 ~ file: AppWrap.js:7 ~ HOC ~ props", props);
 		return (
 			<div className={`relative ${classNames}`}>
-				<Component />
+				<Component {...props} />
 			</div>
 		);
 	};

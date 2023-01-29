@@ -7,9 +7,12 @@ import {
 	AiOutlinePlus,
 	AiOutlineStar,
 } from "react-icons/ai";
+import Product from "../components/Product";
+import { client } from "../lib/client";
+
 import AppWrap from "../wrapper/AppWrap";
 
-const Offer = () => {
+const Offer = ({ products }) => {
 	return (
 		<>
 			<section id="offer" className="container mx-auto px-7 mt-44 text-left">
@@ -118,71 +121,23 @@ const Offer = () => {
 						You may also like
 					</h3>
 					<div className="flex gap-6">
-						<div className="offer__like flex flex-col mt-20  ">
-							<span
-								className="offer__jar bg-grayTertiary py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
-							>
-								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
-							</span>
-							<div
-								className="offer__jar-frame bg-white border p-2 
-						border-orangeTertiary self-center flex justify-between rounded-xl w-[95%] -translate-y-6 "
-							>
-								<p className="text-orangePrimary text-sm">rapaseed honey</p>
-								<p className="text-brwonPrimary text-sm">$10</p>
-							</div>
-						</div>
-						<div className="offer__like flex flex-col mt-20  ">
-							<span
-								className="offer__jar bg-grayTertiary py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
-							>
-								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
-							</span>
-							<div
-								className="offer__jar-frame bg-white border p-2 
-						border-orangeTertiary self-center flex justify-between rounded-xl w-[95%] -translate-y-6 "
-							>
-								<p className="text-orangePrimary text-sm">rapaseed honey</p>
-								<p className="text-brwonPrimary text-sm">$10</p>
-							</div>
-						</div>
-						<div className="offer__like flex flex-col mt-20  ">
-							<span
-								className="offer__jar bg-grayTertiary py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
-							>
-								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
-							</span>
-							<div
-								className="offer__jar-frame bg-white border p-2 
-						border-orangeTertiary self-center flex justify-between rounded-xl w-[95%] -translate-y-6 "
-							>
-								<p className="text-orangePrimary text-sm">rapaseed honey</p>
-								<p className="text-brwonPrimary text-sm">$10</p>
-							</div>
-						</div>
-						<div className="offer__like flex flex-col mt-20  ">
-							<span
-								className="offer__jar bg-grayTertiary py-11 px-14
-		rounded-[25px] grid place-items-center min-w-[200px] hover:bg-whitePrimary hover:cursor-pointer"
-							>
-								<Image src="/Jar-flowers.png" width={184} height={202}></Image>
-							</span>
-							<div
-								className="offer__jar-frame bg-white border p-2 
-						border-orangeTertiary self-center flex justify-between rounded-xl w-[95%] -translate-y-6 "
-							>
-								<p className="text-orangePrimary text-sm">rapaseed honey</p>
-								<p className="text-brwonPrimary text-sm">$10</p>
-							</div>
-						</div>
+						{products?.map((product) => (
+							<Product key={product._id} product={product} />
+						))}
 					</div>
 				</div>
 			</section>
 		</>
 	);
+};
+
+export const getServerSideProps = async () => {
+	const query = '*[_type == "product"]';
+	const products = await client.fetch(query);
+
+	return {
+		props: { products },
+	};
 };
 
 export default AppWrap(Offer, "offer");

@@ -12,6 +12,7 @@ const navigationRoutes = ["home", "about", "blog", "offer"];
 
 const Navbar = () => {
 	const router = useRouter();
+
 	function NavigationLink({ href, text, router }) {
 		const isActive = router.asPath === (href === "/home" ? "/" : href);
 		return (
@@ -26,6 +27,7 @@ const Navbar = () => {
 			</Link>
 		);
 	}
+
 	return (
 		<nav className=" relative  mx-auto px-8 ">
 			<div className=" sticky flex items-center justify-between">
@@ -46,9 +48,12 @@ const Navbar = () => {
 						);
 					})}
 				</nav>
-				<Link href="/">
+				<button type="button" className="relative">
 					<AiOutlineShopping color="#A74E12" size="1.7em" />
-				</Link>
+					<span className="cart-tem-qty absolute bg-orangePrimary text-whitePrimary rounded-full -right-2 -top-1 w-5 h-5 flex justify-center align-middle text-sm">
+						1
+					</span>
+				</button>
 				<button
 					id="menu-btn"
 					className="open block cursor-pointer md:hidden  focus:outline-none"

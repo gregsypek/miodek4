@@ -27,10 +27,22 @@ export default {
       },
     },
     {
-      name: 'price',
-      title: 'Price',
-      type: 'number',
+      name: 'prices',
+      title: 'Prices',
+      type: 'array',
+      of: [{type: 'number'}],
     },
+    {
+      name: 'sizes',
+      title: 'Sizes',
+      type: 'array',
+      of: [{type: 'number'}],
+    },
+    // {
+    //   name: 'price',
+    //   title: 'Price',
+    //   type: 'number',
+    // },
     {
       name: 'details',
       title: 'Details',

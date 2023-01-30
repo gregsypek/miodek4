@@ -122,6 +122,15 @@ a {
 	width: 90%;
 	height: 100%;
 }
+/* .offer-rapaseed::before {
+	position: absolute;
+	content: url("../public/offer/rapeseed-gradient.svg");
+	z-index: -1;
+	top: -25%;
+	right: -60%;
+	width: 90%;
+	height: 100%;
+} */
 /* .offer {
 	overflow: hidden;
 } */
@@ -504,5 +513,36 @@ footer {
 		height: 10%;
 		width: auto;
 		z-index: 1;
+	}
+}
+
+/* carousel animation */
+
+.marquee {
+	position: relative;
+	height: 400px;
+	width: 100%;
+	overflow-x: hidden;
+}
+/* .track {
+	animation: marquee 10s linear infinite;
+	width: 550%;
+} */
+.track {
+	position: absolute;
+	white-space: nowrap;
+	will-change: transform;
+	animation: marquee 13s linear infinite;
+	width: 180%;
+}
+.track:hover {
+	animation-play-state: paused;
+}
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-20%);
 	}
 }

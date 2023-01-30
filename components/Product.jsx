@@ -20,7 +20,7 @@ const Product = ({ product }) => {
 						height={202}
 						alt={product.name}
 					/>
-					{console.log(product)}
+					{/* {console.log(product)} */}
 				</div>
 				<div
 					className="offer__jar-frame bg-white border p-2 

@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 
+import Product from "../components/Product";
 import { client } from "../lib/client";
 
 import AppWrap from "../wrapper/AppWrap";
@@ -9,9 +10,9 @@ import ProductDetails from "./offer/[slug]";
 const Offer = ({ products }) => {
 	return (
 		<>
-			<ProductDetails product={products[0]} products={products} />
+			<ProductDetails product={products[0]} />
 
-			{/* <Carousel products={products} className="bg-red-200" /> */}
+			{/* <Carousel products={products} /> */}
 		</>
 	);
 };

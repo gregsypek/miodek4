@@ -8,9 +8,13 @@ import {
 	AiOutlineShopping,
 } from "react-icons/ai";
 
+import { Cart } from "./";
+import { useStateContext } from "../context/StateContext";
+
 const navigationRoutes = ["home", "about", "blog", "offer"];
 
 const Navbar = () => {
+	const { showCart, setShowCart, totalQuantities } = useStateContext();
 	const router = useRouter();
 
 	function NavigationLink({ href, text, router }) {
@@ -48,12 +52,18 @@ const Navbar = () => {
 						);
 					})}
 				</nav>
-				<button type="button" className="relative">
+				<button
+					type="button"
+					className="relative"
+					onClick={() => setShowCart(true)}
+				>
 					<AiOutlineShopping color="#A74E12" size="1.7em" />
 					<span className="cart-tem-qty absolute bg-orangePrimary text-whitePrimary rounded-full -right-2 -top-1 w-5 h-5 flex justify-center align-middle text-sm">
-						1
+						{totalQuantities}
 					</span>
 				</button>
+
+				{showCart && <Cart />}
 				<button
 					id="menu-btn"
 					className="open block cursor-pointer md:hidden  focus:outline-none"
@@ -61,6 +71,7 @@ const Navbar = () => {
 					<AiOutlineMenu className="w-6 h-6 text-brownPrimary " />
 				</button>
 			</div>
+
 			{/* Background Overlay */}
 			{/* <div className="hidden bg-gradient-to-r from-orange-300 to-orange-500 opacity-75 blur-md h-full w-full fixed inset-0"></div> */}
 

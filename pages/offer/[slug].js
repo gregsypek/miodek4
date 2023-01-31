@@ -12,14 +12,16 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "../../components/Carousel";
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
-	const [index, setIndex] = useState(0);
-
-	console.log("🚀 ~ file: [slug].js:18 ~ ProductDetails ~ product", product);
+	// console.log("🚀 ~ file: [slug].js:18 ~ ProductDetails ~ product", product);
 	const { image, name, details, prices, sizes } = product;
 	const jarWidth = ["38", "58", "88"];
 	const jarHeight = ["41", "61", "91"];
+
+	const [index, setIndex] = useState(0);
+	const { decQty, incQty, qty, onAdd, cartItems } = useStateContext();
 	return (
 		<>
 			<section id="offer" className="container mx-auto px-7 mt-44 text-left">
@@ -87,6 +89,7 @@ const ProductDetails = ({ product, products }) => {
 										className=" border-r-2 
 													border-graySecondary w-12 h-full flex justify-center items-center hover:cursor-pointer hover:bg-whitePrimary
 												"
+										onClick={decQty}
 									>
 										<AiOutlineMinus color="red" size="1.5em" />
 									</span>
@@ -95,20 +98,25 @@ const ProductDetails = ({ product, products }) => {
 													border-graySecondary
 													rounded-sm flex justify-center items-center text-xl text-graySecondary hover:cursor-pointer hover:bg-whitePrimary"
 									>
-										1
+										{qty}
 									</span>
-									<span className="w-12 h-full flex justify-center items-center hover:cursor-pointer hover:bg-whitePrimary">
+									<span
+										className="w-12 h-full flex justify-center items-center hover:cursor-pointer hover:bg-whitePrimary"
+										onClick={incQty}
+									>
 										<AiOutlinePlus color="green" size="1.5em" />
 									</span>
 								</div>
 							</div>
 							<div className="offer__btns flex flex-col md:flex-row mt-12 gap-7 self-start md:mt-0">
-								<Link
-									href="/"
+								<button
+									type="button"
+									onClick={() => onAdd(product, qty)}
 									className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full   hover:bg-graySecondary  hover:text-whiteSecondary uppercase border-2  border-graySecondary"
 								>
 									Add to Cart
-								</Link>
+								</button>
+
 								<Link
 									href="/"
 									className=" py-2 px-7 border-2 border-transparent text-white bg-orangeTertiary rounded-full hover:bg-orangeSecondary uppercase justify-self-start"

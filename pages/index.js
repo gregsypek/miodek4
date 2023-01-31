@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import AppWrap from "../wrapper/AppWrap";
 
-import { client } from "../lib/client";
+import { client, urlFor } from "../lib/client";
 import HeroBanner from "../components/HeroBanner";
+import Testimonial from "../components/Testimonial";
 
-const Home = ({ bannerData }) => {
+const Home = ({ bannerData, testimonials }) => {
+	console.log("🚀 ~ file: index.js:11 ~ Home ~ testimonials", testimonials);
 	return (
 		<>
 			{/* Hero Section */}
@@ -149,56 +151,9 @@ const Home = ({ bannerData }) => {
 					</p>
 				</div>
 				<div className="container gap-y-20 lg:gap-x-20 px-4 md:px-8 lg:px-28 mt-24 flex flex-col content-center lg:flex-row justify-center flex-wrap mx-auto flex-grow flex-shrink basis-80 items-stretch ">
-					<div className="testimonials__card  flex flex-col items-center p-6 space-y-6 rounded-lg lg:w-1/3 border-2 border-orangeTertiary shadow-md max-w-[350px] bg-whiteSecondary">
-						<Image
-							src="/Rachel.png"
-							width={100}
-							height={100}
-							alt="Rachel"
-							className=" -mt-14 rounded-full"
-						></Image>
-						<h5 className="text-lg font-bold text-orangeTertiary uppercase">
-							Rachel k.
-						</h5>
-						<p className="text-sm text-grayPrimary text-center ">
-							I've been using this honey for years and it never disappoints. The
-							flavor is always spot on and it's great to know that it's all
-							natural and sustainable. Highly recommend!
-						</p>
-					</div>
-					<div className="testimonials__card flex flex-col items-center p-6 space-y-6 rounded-lg lg:w-1/3 border-2 border-orangeTertiary shadow-md max-w-[350px] bg-whiteSecondary">
-						<Image
-							src="/Olivia.png"
-							width={100}
-							height={100}
-							alt="Olivia"
-							className="-mt-14 rounded-full"
-						></Image>
-						<h5 className="text-lg font-bold text-orangeTertiary uppercase">
-							Olivia C.
-						</h5>
-						<p className="text-sm text-grayPrimary text-center ">
-							Lovely. Highly recommended! Thank you for making such a great
-							product!
-						</p>
-					</div>
-					<div className=" z-[-2] testimonials__card flex flex-col items-center p-6 space-y-6 rounded-lg lg:w-1/3 border-2 bg-whiteSecondary border-orangeTertiary shadow-md max-w-[350px]">
-						<Image
-							src="/Jessica.png"
-							width={100}
-							height={100}
-							alt="Jessica"
-							className=" -mt-16 rounded-full"
-						></Image>
-						<h5 className="text-lg font-bold text-orangeTertiary uppercase">
-							Jessica S.
-						</h5>
-						<p className="text-sm text-grayPrimary text-center">
-							I love using this honey in my baking and cooking. It adds the
-							perfect touch of sweetness and I feel good about using a product
-							that's good for the environment.
-						</p>
-					</div>
+					{testimonials?.map((testimonial) => (
+						<Testimonial data={testimonial} />
+					))}
 				</div>
 			</section>
 			<HeroBanner heroBanner={bannerData.length && bannerData[0]} />
@@ -207,10 +162,12 @@ const Home = ({ bannerData }) => {
 };
 export const getServerSideProps = async () => {
 	const bannerQuery = '*[_type == "banner"]';
+	const testimonialsQuery = '*[_type == "testimonials"]';
 	const bannerData = await client.fetch(bannerQuery);
+	const testimonials = await client.fetch(testimonialsQuery);
 
 	return {
-		props: { bannerData },
+		props: { bannerData, testimonials },
 	};
 };
 // export default Home;

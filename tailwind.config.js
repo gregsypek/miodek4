@@ -34,7 +34,12 @@ module.exports = {
 			},
 			backgroundImage: {
 				"hero-pattern": "url('/hero-gradient.png')",
+				gradient:
+					"linear-gradient(#ecbd79 0%, rgba(236, 194, 108, 0.99) 26.05%, #eaba86 66.67%, #ecb479 100%)",
+				gradientRGBA:
+					"linear-gradient(rgba(236,189,121,.9) 0%, rgba(236, 194, 108, 0.91) 26.05%, rgba(234,186,134,0.9) 66.67%, rgba(236,180,121,0.9) 100%)",
 			},
+
 			maxWidth: {
 				readable: "50ch",
 				medium: "35ch",

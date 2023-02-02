@@ -168,10 +168,10 @@ footer {
 	overflow: hidden;
 }
 
-.footer__container {
+/* .footer__container {
 	position: relative;
-	/* overflow-y: hidden; */
-}
+
+} */
 
 .footer__container::before {
 	position: absolute;

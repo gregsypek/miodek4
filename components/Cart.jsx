@@ -13,7 +13,8 @@ import Link from "next/link";
 
 const Cart = () => {
 	const cartRef = useRef();
-	const { totalPrice, totalQuantities, cartItems, setShowCart } =
+	const { totalPrice, totalQuantities, cartItems, setShowCart,toggleCartItemQuantity,onRemove } =
+	
 		useStateContext();
 	return (
 		<>
@@ -76,7 +77,7 @@ const Cart = () => {
 													{item.name}
 												</h5>
 												<h4 className="text-xl text-graySecondary">
-													{item.prices[0]}${" "}
+													${item.prices[0]}
 												</h4>
 											</div>
 											<div className="flex justify-between items-center">
@@ -89,7 +90,7 @@ const Cart = () => {
 														className=" border-r-2 
 													border-graySecondary w-10 h-full flex justify-center items-center hover:cursor-pointer hover:bg-red-200
 												"
-														onClick=""
+														onClick={()=>toggleCartItemQuantity(item._id, 'dec')}
 													>
 														<AiOutlineMinus color="red" size="1.3em" />
 													</span>
@@ -98,11 +99,11 @@ const Cart = () => {
 													border-graySecondary
 													rounded-sm flex justify-center items-center text-xl text-graySecondary  hover:bg-whitePrimary"
 													>
-														0
+														{item.quantity}
 													</span>
 													<span
 														className="w-10 h-full flex justify-center items-center hover:cursor-pointer hover:bg-green-200"
-														onClick=""
+														onClick={()=>toggleCartItemQuantity(item._id, 'inc')}
 													>
 														<AiOutlinePlus color="green" size="1.3em" />
 													</span>
@@ -110,12 +111,12 @@ const Cart = () => {
 												<button
 													type="button"
 													className="remove-item flex"
-													onClick=""
+													onClick={()=>onRemove(item)}
 												>
 													<TiDeleteOutline
-														color="#dc2626"
+														color="#991b1b"
 														size="2em"
-														className="hover:cursor-pointer hover:fill-red-800 "
+														className="hover:cursor-pointer hover:fill-red-900 "
 													/>
 												</button>
 											</div>
@@ -129,7 +130,7 @@ const Cart = () => {
 									<p className="text-xl font-bold uppercase text-orangePrimary ">
 										Subtotal
 									</p>
-									<p className="text-2xl font-bold text-graySecondary">$10</p>
+									<p className="text-2xl font-bold text-graySecondary">{totalPrice}</p>
 								</div>
 								<button
 									type="button"

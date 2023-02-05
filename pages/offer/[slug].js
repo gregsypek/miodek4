@@ -15,8 +15,8 @@ import Carousel from "../../components/Carousel";
 import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
-	// console.log("🚀 ~ file: [slug].js:18 ~ ProductDetails ~ product", product);
-	const { image, name, details, prices, sizes } = product;
+	console.log("🚀 ~ file: [slug].js:18 ~ ProductDetails ~ product", product);
+	const { image, name, details, price,size } = product;
 	const jarWidth = ["38", "58", "88"];
 	const jarHeight = ["41", "61", "91"];
 
@@ -52,13 +52,14 @@ const ProductDetails = ({ product, products }) => {
 
 									//
 								/>
-								<strong className="text-orangePrimary">{sizes[i]}ml</strong>
+								<strong className="text-orangePrimary">{}ml</strong>
 							</span>
 						))}
 					</div>
 					<div className="offer__info flex flex-col space-y-4 lg:w-5/12 justify-start">
 						<h3 className="text-base uppercase text-orangePrimary text-left">
-							{name}
+							{name} 
+							{size?.jar}ml
 						</h3>
 						<div className="offer__details flex flex-col space-y-4 ">
 							<div className="offer__stars flex items-center">
@@ -75,7 +76,7 @@ const ProductDetails = ({ product, products }) => {
 							<p className="text-graySecondary max-w-medium">{details}</p>
 						</div>
 						<div className="offer__quantity flex flex-col gap-7 flex-1 justify-between h-[500px]">
-							<p className="text-2xl text-graySecondary">{prices[index]}$</p>
+							<p className="text-2xl text-graySecondary">${price}</p>
 							<div className="offer__values flex gap-8 items-center">
 								<p className="text-lg uppercase text-orangePrimary text-left ">
 									Quantity:

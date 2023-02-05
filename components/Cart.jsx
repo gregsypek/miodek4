@@ -64,10 +64,11 @@ const Cart = () => {
 											className="bg-gray-300 py-4 px-6  rounded-[25px] grid place-items-center max-w-[150px] md:max-w-[200px] border p-2 border-orangeTertiary"
 											key={item._id}
 										>
+										{ console.log("🚀 ~ file: Cart.jsx:61 ~ Cart ~ item", item)}
 											<img
 												src={urlFor(item?.image[0])}
 												className="cart-product-image"
-												alt={item.name}
+												alt={item?.name}
 											/>
 										</div>
 
@@ -77,7 +78,7 @@ const Cart = () => {
 													{item.name}
 												</h5>
 												<h4 className="text-xl text-graySecondary">
-													${item.prices[0]}
+													${item.price}
 												</h4>
 											</div>
 											<div className="flex justify-between items-center">
@@ -130,7 +131,7 @@ const Cart = () => {
 									<p className="text-xl font-bold uppercase text-orangePrimary ">
 										Subtotal
 									</p>
-									<p className="text-2xl font-bold text-graySecondary">{totalPrice}</p>
+									<p className="text-2xl font-bold text-graySecondary">${totalPrice}</p>
 								</div>
 								<button
 									type="button"

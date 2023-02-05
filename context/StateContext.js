@@ -8,7 +8,7 @@ export const StateContext = ({ children }) => {
 	const [showCart, setShowCart] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
-	
+
 	const [totalQuantities, setTotalQuantities] = useState(0);
 	const [qty, setQty] = useState(1);
 
@@ -16,14 +16,16 @@ export const StateContext = ({ children }) => {
 	let index;
 
 	const onAdd = (product, quantity) => {
-		console.log("🚀 ~ file: StateContext.js:18 ~ onAdd ~ product", product)
 		const checkProductInCart = cartItems.find(
 			(item) => item._id === product._id
 		);
-
-		setTotalPrice(
-			(prevTotalPrice) => prevTotalPrice + product.price * quantity
-		);
+		if (cartItems.length < 1) {
+			setTotalPrice(product.price * quantity);
+		} else {
+			setTotalPrice(
+				(prevTotalPrice) => prevTotalPrice + product.price * quantity
+			);
+		}
 
 		setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
@@ -32,7 +34,7 @@ export const StateContext = ({ children }) => {
 				if (cartProduct._id === product._id)
 					return {
 						...cartProduct,
-						quantity: cartProduct.quantity + quantity,		
+						quantity: cartProduct.quantity + quantity,
 					};
 			});
 			setCartItems(updatedCartItems);
@@ -42,7 +44,6 @@ export const StateContext = ({ children }) => {
 		}
 		toast.success(`${qty} ${product.name} added to the cart.`);
 	};
-
 
 	const onRemove = (product) => {
 		foundProduct = cartItems.find((item) => item._id === product._id);
@@ -64,7 +65,6 @@ export const StateContext = ({ children }) => {
 		index = cartItems.findIndex((product) => product._id === id);
 
 		if (value === "inc") {
-		
 			setCartItems((prevCartItems) =>
 				prevCartItems.map((item) => {
 					if (item._id === id) {
@@ -76,7 +76,7 @@ export const StateContext = ({ children }) => {
 			setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
 			setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
 		} else if (value === "dec") {
-			if (foundProduct.quantity > 1) {			
+			if (foundProduct.quantity > 1) {
 				setCartItems((prevCartItems) =>
 					prevCartItems.map((item) => {
 						if (item._id === id) {
@@ -118,7 +118,6 @@ export const StateContext = ({ children }) => {
 				setTotalPrice,
 				setTotalQuantities,
 				setCartItems,
-
 			}}
 		>
 			{children}

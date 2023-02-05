@@ -14,15 +14,14 @@ import Link from "next/link";
 const Cart = () => {
 	const cartRef = useRef();
 	const { totalPrice, totalQuantities, cartItems, setShowCart,toggleCartItemQuantity,onRemove } =
-	
 		useStateContext();
 	return (
 		<>
 			<div
-				className="w-screen bg-gradientRGBA fixed right-0 top-0 z-50 transition-all"
+				className="w-screen h-screen bg-gradientRGBA fixed right-0 top-0 z-50 transition-all overflow-y-hidden"
 				ref={cartRef}
 			>
-				<div className="h-screen w-11/12 md:w-8/12 lg:w-[600px] bg-whitePrimary relative float-right py-10 px-6 ">
+				<div className="h-full w-11/12 md:w-8/12 lg:w-[600px] bg-whitePrimary relative float-right py-10 px-6 overflow-auto">
 					<div className="flex gap-4 items-center">
 						<button
 							type="button"
@@ -52,19 +51,17 @@ const Cart = () => {
 								</Link>
 							</div>
 						)}
-						{console.log(
-							"🚀 ~ file: Cart.jsx:55 ~ Cart ~ cartItems",
-							cartItems
-						)}
+					
 						{cartItems.length >= 1 &&
 							cartItems.map((item) => (
 								<>
-									<div className="cart__middle flex flex-col px-12 md:px-0 md:flex-row gap-4 md:gap-12 mt-16 md:mt-8">
+									<div className="cart__middle flex flex-col px-12 md:px-0 md:flex-row gap-4 md:gap-12 mt-16 md:mt-8" 	>
+									{/* {		  console.log("🚀 ~ file: Cart.jsx:128 ~ Cart ~ cartItems", cartItems)} */}
 										<div
 											className="bg-gray-300 py-4 px-6  rounded-[25px] grid place-items-center max-w-[150px] md:max-w-[200px] border p-2 border-orangeTertiary"
 											key={item._id}
 										>
-										{ console.log("🚀 ~ file: Cart.jsx:61 ~ Cart ~ item", item)}
+										{/* { console.log("🚀 ~ file: Cart.jsx:61 ~ Cart ~ item", item)} */}
 											<img
 												src={urlFor(item?.image[0])}
 												className="cart-product-image"

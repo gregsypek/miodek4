@@ -17,7 +17,10 @@ const Offer = ({ products }) => {
 };
 
 export const getServerSideProps = async () => {
-	const query = '*[_type == "product"]';
+	const query = `*[_type == "product"]{
+		image, name, slug, price,  details, _id,
+	 size->{jar}
+	}`;
 	const products = await client.fetch(query);
 
 	return {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { client, urlFor } from "../../lib/client";
 import AppWrap from "../../wrapper/AppWrap";
-import { useRouter } from "next/router";
+
 import {
 	AiFillStar,
 	AiOutlineMinus,
@@ -15,21 +15,27 @@ import Carousel from "../../components/Carousel";
 import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
-	const router = useRouter();
+// console.log("🚀 ~ file: [slug].js:18 ~ ProductDetails ~ product", product)
 
-	const currentHoneyName = product.name.split(" ")[0];
+const currentHoneyName = product.name.split(' ')[0];
+// console.log("🚀 ~ file: [slug].js:21 ~ ProductDetails ~ currentHoneyName", currentHoneyName)
 
-	const currentOtherSizes = products
-		.filter((jar) => jar.name.startsWith(currentHoneyName))
-		.sort((a, b) => a.size.jar - b.size.jar);
 
-	const { image, name, details, price,   } = product;
+const currentOtherSizes = products.filter(jar=>	
+	jar.name.startsWith(currentHoneyName)
+).sort((a,b)=> a.size.jar-b.size.jar);
 
+// console.log("🚀 ~ file: [slug].js:27 ~ otherSizes ~ otherSizes", currentOtherSizes)
+
+
+	const { image, name, details, price, size } = product;
+	// console.log("🚀 ~ file: [slug].js:31 ~ ProductDetails ~ product!!!!!!!!", product)
 	const jarWidth = ["38", "58", "88"];
 	const jarHeight = ["41", "61", "91"];
 
 	const [index, setIndex] = useState(0);
-	const { decQty, incQty, qty, onAdd } = useStateContext();
+const [miniatureIndex, setMiniatureIndex] = useState(0)
+	const { decQty, incQty, qty, onAdd, cartItems } = useStateContext();
 	return (
 		<>
 			<section id="offer" className="container mx-auto px-7 mt-44 text-left">
@@ -42,39 +48,58 @@ const ProductDetails = ({ product, products }) => {
 						className="offer__jar  border-2  p-14
 						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center h-[500px]"
 					>
-				
-						<img src={urlFor(image && image[0])} width={381} height={390} />						
+					{/* {console.log('mini',miniatureIndex, 'normal', index)} */}
+						{/* <img src={urlFor(image && image[0])} width={381} height={390} /> */}
+						<img src={urlFor(currentOtherSizes[miniatureIndex].image && currentOtherSizes[miniatureIndex].image[0])} width={381} height={390} />
 					</div>
 					<div className="offer__miniature flex lg:flex-col lg:justify-center gap-4 ">
-						{currentOtherSizes.length &&
-							currentOtherSizes.map((item, i) => (
-								<Link
-									href={`/offer/${item?.slug?.current}`}
-									className={`offer__jar bg-whiteSecondary border-2 p-2  
+						{currentOtherSizes.length && currentOtherSizes.map((item, i) => (
+							<span
+								className={`offer__jar bg-whiteSecondary border-2 p-2  
 						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer ${
-							 router.query.slug === item.slug.current  
-								? "bg-orangeQuaternary"
-								: "" 
+							i === miniatureIndex ? "bg-orangeQuaternary" : ""
 						}`}
-									onClick={() => setIndex(i)}
-									key={item._id}
-								>						
-									<img
-										src={urlFor(item.image[0])}
-										width={`${jarWidth[i]}`}
-										height={`${jarHeight[i]}`}
-									/>
+								onClick={() => setMiniatureIndex(i)}
+								key={item._id}
+							>
+							{/* {	  console.log("🚀 ~ file: [slug].js:52 ~ ProductDetails ~ item", item)} */}
+								<img
+									src={urlFor(item.image[0])}
+									width={`${jarWidth[i]}`}
+									height={`${jarHeight[i]}`}								
+								/>
+								{/* <img
+									src={urlFor(item.image[0])}
+									width={`${jarWidth[i]}`}
+									height={`${jarHeight[i]}`}								
+								/> */}
+								<strong className="text-orangePrimary">{item.size.jar}ml</strong>
+							</span>
+						))}
+						{/* {image.map((item, i) => (
+							<span
+								className={`offer__jar bg-whiteSecondary border-2 p-2  
+						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer ${
+							i === index ? "bg-orangeQuaternary" : ""
+						}`}
+								onClick={() => setIndex(i)}
+							>
+								<img
+									src={urlFor(item)}
+									width={`${jarWidth[i]}`}
+									height={`${jarHeight[i]}`}
 
-									<strong className="text-orangePrimary">
-										{item.size.jar}ml
-									</strong>
-								</Link>
-							))}				
+									//
+								/>
+								<strong className="text-orangePrimary">{}ml</strong>
+							</span>
+						))} */}
 					</div>
-
 					<div className="offer__info flex flex-col space-y-4 lg:w-5/12 justify-start">
+
 						<h3 className="text-base uppercase text-orangePrimary text-left">
-							{name}</h3>
+							{currentOtherSizes[miniatureIndex].name} 						
+						</h3>
 						<div className="offer__details flex flex-col space-y-4 ">
 							<div className="offer__stars flex items-center">
 								<AiFillStar color="#F2A603" size="1.5em" />
@@ -87,11 +112,11 @@ const ProductDetails = ({ product, products }) => {
 							<h3 className="text-lg uppercase text-orangePrimary text-left  ">
 								Details
 							</h3>
-							<p className="text-graySecondary max-w-medium">{details}</p>
-							{/* <p className="text-graySecondary max-w-medium">{currentOtherSizes[index].details}</p> */}
+							<p className="text-graySecondary max-w-medium">{currentOtherSizes[miniatureIndex].details}</p>
 						</div>
 						<div className="offer__quantity flex flex-col gap-7 flex-1 justify-between h-[500px]">
-							<p className="text-2xl text-graySecondary">${price}</p>
+						{/* { console.log('heeeee', currentOtherSizes[miniatureIndex])} */}
+							<p className="text-2xl text-graySecondary">${currentOtherSizes[miniatureIndex].price}</p>
 							<div className="offer__values flex gap-8 items-center">
 								<p className="text-lg uppercase text-orangePrimary text-left ">
 									Quantity:
@@ -127,7 +152,7 @@ const ProductDetails = ({ product, products }) => {
 							<div className="offer__btns flex flex-col md:flex-row mt-12 gap-7 self-start md:mt-0">
 								<button
 									type="button"
-									onClick={() => onAdd(product, qty)}
+									onClick={() => onAdd(currentOtherSizes[miniatureIndex], qty)}
 									className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full   hover:bg-graySecondary  hover:text-whiteSecondary uppercase border-2  border-graySecondary"
 								>
 									Add to Cart

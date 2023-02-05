@@ -16,9 +16,12 @@ export const StateContext = ({ children }) => {
 	let index;
 
 	const onAdd = (product, quantity) => {
+
+		// console.log("🚀 ~ file: StateContext.js:19 ~ onAdd ~ product", product)
 		const checkProductInCart = cartItems.find(
 			(item) => item._id === product._id
 		);
+
 		if (cartItems.length < 1) {
 			setTotalPrice(product.price * quantity);
 		} else {
@@ -36,14 +39,16 @@ export const StateContext = ({ children }) => {
 						...cartProduct,
 						quantity: cartProduct.quantity + quantity,
 					};
-			});
+					return cartProduct
+			});	
 			setCartItems(updatedCartItems);
 		} else {
-			product.quantity = quantity;
-			setCartItems([...cartItems, { ...product }]);
+			// product.quantity = quantity;
+			setCartItems([...cartItems, { ...product, quantity }]);
 		}
 		toast.success(`${qty} ${product.name} added to the cart.`);
 	};
+	
 
 	const onRemove = (product) => {
 		foundProduct = cartItems.find((item) => item._id === product._id);

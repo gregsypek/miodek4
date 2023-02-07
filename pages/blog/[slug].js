@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { client, urlFor } from "../../lib/client";
+
 import Link from "next/link";
 import React from "react";
 import AppWrap from "../../wrapper/AppWrap";
+import { PortableText } from "@portabletext/react";
 
-const Post = () => {
+const PostDetails = ({ post, posts }) => {
 	return (
 		<>
 			<section
@@ -12,7 +15,7 @@ const Post = () => {
 			>
 				<div className="selected-post w-full lg:w-7/12 ">
 					<h3 className="text-base uppercase text-orangePrimary text-left pb-5 ">
-						We have spring now!
+						{post.title}
 					</h3>
 					<div className="post__container flex gap-7 justify-between text-graySecondary mx-7">
 						<div
@@ -20,35 +23,33 @@ const Post = () => {
 						border-orangeTertiary rounded-md items-center py-7 flex flex-col
 						gap-7 shadow-md"
 						>
-							<Image src="/posts/post1.png" width={677} height={306}></Image>
+							<img
+								src={urlFor(post?.mainImage)
+									.width(677)
+									.height(306)
+									.fit("max")
+									.auto("format")}
+								alt={post.title || " "}
+							/>
 							<p className="post__title text-orangeTertiary font-bold text-lg tracking-wider">
-								We have spring now!
+								{post.title}
 							</p>
 							<div className="post__content py-7 flex flex-col gap-7 px-7">
-								<p className="post__date">21 March 2023</p>
-								<h4 className="font-bold self-start">Magni</h4>
-								<p className="post__text  self-start">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Obcaecati autem, ducimus a ab inventore dolore laborum. Eaque
-									voluptatum ab consequuntur...
+								<p className="post__date">
+									{new Date(post?.publishedAt).toLocaleDateString("en-GB", {
+										weekday: "long",
+										year: "numeric",
+										month: "long",
+										day: "numeric",
+									})}
 								</p>
-								<h4 className="font-bold self-start">Magni adipisci</h4>
-								<p className="post__text self-start">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-									facilis nihil ipsam, nemo iste ea itaque doloremque molestiae!
-									Totam, maxime blanditiis! Consequuntur aliquid tempora
-									laudantium consequatur necessitatibus maxime eos quibusdam
-									pariatur? Consequatur perspiciatis, quo quisquam repellendus
-									voluptates facilis cum? Autem, rerum delectus quaerat velit,
-									animi, fuga quibusdam pariatur quam est nihil enim? Officia in
-									nulla accusantium dicta autem asperiores beatae fugiat
-									sapiente. Enim dicta quasi repellendus sunt nesciunt
-									praesentium explicabo, quos optio beatae cupiditate, quisquam
-									totam maxime facere. Voluptates itaque adipisci corrupti
-									reiciendis facere tempora quasi, velit sapiente inventore,
-									ipsa autem? Quidem veniam laudantium rerum animi repellat
-									itaque ut quasi....
-								</p>
+								{/* <h4 className="font-bold self-start">Magni</h4> */}
+
+								<PortableText
+									value={post.body}
+									className="post__text  self-start"
+								/>
+
 								<Link
 									href="/blog"
 									className=" py-1 px-5 text-graySecondary bg-whiteSecondary rounded-full  hover:bg-whitePrimary uppercase text-base border self-start border-graySecondary shadow-md"
@@ -134,4 +135,43 @@ const Post = () => {
 	);
 };
 
-export default AppWrap(Post, "blog");
+export const getStaticPaths = async () => {
+	const query = `*[_type == "post"] {
+    slug {
+      current
+    }
+  }
+  `;
+
+	const posts = await client.fetch(query);
+
+	const paths = posts.map((post) => ({
+		params: {
+			slug: post.slug.current,
+		},
+	}));
+	console.log("🚀 ~ file: [slug-post].js:138 ~ paths ~ paths", paths);
+
+	return {
+		paths,
+		fallback: "blocking",
+	};
+};
+
+export const getStaticProps = async ({ params: { slug } }) => {
+	const query = `*[_type == "post" && slug.current == '${slug}'][0]`;
+	const postsQuery = `*[_type == "post"]{
+		title,  slug, mainImage,  publishedAt, body 
+	 
+	}`;
+
+	const post = await client.fetch(query);
+
+	const posts = await client.fetch(postsQuery);
+
+	return {
+		props: { posts, post },
+	};
+};
+
+export default AppWrap(PostDetails, "blog");

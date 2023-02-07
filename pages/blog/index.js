@@ -28,9 +28,17 @@ function Blog({posts}) {
 
 export const getServerSideProps = async () => {
 
-	const postsQuery = '*[_type == "post"]';
+	const postsQuery = `*[_type == "post" && publishedAt < now()] | order(publishedAt desc){
+		title,
+		slug,
+		mainImage,
+		publishedAt,
+		body
+
+	}`;
 
 	const posts = await client.fetch(postsQuery);
+	console.log("🚀 ~ file: index.js:41 ~ getServerSideProps ~ posts", posts)
 
 	return {
 		props: {  posts },

@@ -107,7 +107,7 @@ const Home = ({ bannerData, testimonials }) => {
 						<div className="h-[550px] w-full lg:w-5/12 flex items-center">
 							<picture className="">
 								<Image
-									className=" w-fullself-center jar jar--rapeseed relative -z-[1]"
+									className=" w-full self-center jar jar--rapeseed relative -z-[1]"
 									src="/JAR-FLOWERS.png"
 									width={398}
 									height={377}

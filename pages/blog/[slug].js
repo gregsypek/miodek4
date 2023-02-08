@@ -2,39 +2,47 @@ import Image from "next/image";
 import { client, urlFor } from "../../lib/client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import AppWrap from "../../wrapper/AppWrap";
 import { PortableText } from "@portabletext/react";
+import LastPostMini from "../../components/LastPostMini";
 
 const PostDetails = ({ post, posts }) => {
+	const [showMore, setshowMore] = useState(false)
+	const address = "url('/about/about-gradient2.svg')";
 	return (
 		<>
 			<section
 				id="post"
-				className="container mx-auto px-7 mt-44 flex  justify-between "
+				className={`md:container mx-auto  mt-44 flex  relative justify-between before:content-[${address}]`}
 			>
 				<div className="selected-post w-full lg:w-7/12 ">
-					<h3 className="text-base uppercase text-orangePrimary text-left pb-5 ">
+					<h3 className="text-base uppercase text-orangePrimary text-left pb-5 px-7">
 						{post.title}
 					</h3>
-					<div className="post__container flex gap-7 justify-between text-graySecondary mx-7">
+					<div className="post__container flex gap-7 justify-between text-graySecondary mx-7 ">
 						<div
-							className="post bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-md items-center py-7 flex flex-col
-						gap-7 shadow-md"
+							className="post bg-whiteSecondary border-2 
+						border-orangeTertiary rounded-md items-center   flex flex-col justify-between 
+						gap-7 shadow-md  lg:min-h-[850px] lg:w-[677px]"
 						>
 							<img
-								src={urlFor(post?.mainImage)
-									.width(677)
-									.height(306)
-									.fit("max")
-									.auto("format")}
+								src={`${
+									post.mainImage
+										? urlFor(post?.mainImage)
+												.width(677)
+												.height(306)
+												.fit("max")
+												.auto("format")
+										: "/no-image.png"
+								}`}
 								alt={post.title || " "}
+								className="w-full  max-h-80 object-contain"
 							/>
 							<p className="post__title text-orangeTertiary font-bold text-lg tracking-wider">
 								{post.title}
 							</p>
-							<div className="post__content py-7 flex flex-col gap-7 px-7">
+							<div className="post__content py-7 flex flex-col gap-7 px-7 items-start w-full">
 								<p className="post__date">
 									{new Date(post?.publishedAt).toLocaleDateString("en-GB", {
 										weekday: "long",
@@ -60,75 +68,30 @@ const PostDetails = ({ post, posts }) => {
 						</div>
 					</div>
 				</div>
-				<aside className="last-posts hidden lg:block lg:w-4/12">
-					<h3 className="text-base uppercase text-orangePrimary text-left pb-5 ">
-						Last Posts
-					</h3>
-					<ul className="last-posts__list flex flex-col gap-7">
-						<li
-							className="last-posts__item bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-xl items-center  shadow-md hover:bg-orangeQuaternary hover:cursor-pointer"
-						>
-							<Link
-								href="/blog/1"
-								className=" flex flex-row
-						gap-7 "
-							>
-								<Image src="/posts/post1.png" width={140} height={109}></Image>
+				<aside className="last-posts hidden lg:block lg:w-5/12 px-4">
+				<div className="text-base uppercase text-orangePrimary  flex justify-between text-left pb-5  max-h-[750px] ">
+						<button className="hover:cursor-pointer uppercase" onClick={()=>setshowMore(false)}>3 Last Posts</button> <button className="uppercase hover:cursor-pointer" onClick={()=>setshowMore(true)}>more...</button>
+					</div>
+				<div className="last-posts__slider overflow-y-scroll py-7 max-h-[800px] overflow-x-hidden ">
+				
 
-								<div className="last-posts__info flex flex-col justify-between">
-									<p className="post__title text-orangeTertiary font-bold text-lg tracking-wider">
-										We have spring now!?
-									</p>
-									<p className="post__date text-sm text-graySecondary">
-										21 March 2023
-									</p>
-								</div>
-							</Link>
-						</li>
-						<li
-							className="last-posts__item bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-xl items-center  shadow-md hover:bg-orangeQuaternary hover:cursor-pointer"
-						>
-							<Link
-								href="/blog/2"
-								className=" flex flex-row
-						gap-7"
-							>
-								<Image src="/posts/post2.png" width={140} height={109}></Image>
-
-								<div className="last-posts__info flex flex-col justify-between">
-									<p className="post__title text-orangeTertiary font-bold text-lg tracking-wider">
-										New Flavour{" "}
-									</p>
-									<p className="post__date text-sm text-graySecondary">
-										21 March 2023
-									</p>
-								</div>
-							</Link>
-						</li>
-						<li
-							className="last-posts__item bg-whiteSecondary border-2 p-[2%]
-						border-orangeTertiary rounded-xl items-center  shadow-md hover:bg-orangeQuaternary hover:cursor-pointer"
-						>
-							<Link
-								href="/blog/3"
-								className=" flex flex-row
-						gap-7"
-							>
-								<Image src="/posts/post3.png" width={140} height={109}></Image>
-
-								<div className="last-posts__info flex flex-col justify-between">
-									<p className="post__title text-orangeTertiary font-bold text-lg tracking-wider">
-										Delicious Pancakes
-									</p>
-									<p className="post__date text-sm text-graySecondary">
-										21 March 2023
-									</p>
-								</div>
-							</Link>
-						</li>
+					<ul className="last-posts__list flex flex-col gap-7  ">
+					{showMore ? (posts.length &&
+							posts.map((post) => (
+						<LastPostMini post = {post}/>
+							))): (posts.length &&
+							posts.slice(0,3).map((post) => (
+								<LastPostMini post = {post}/>
+							))) }			
 					</ul>
+					</div>
+					<Image
+									className="blog__jar self-center  -z-[1] mt-36"
+									src="/JAR-FLOWERS.png"
+									width={398}
+									height={377}
+									alt="jar with flowers honey"
+								></Image>
 				</aside>
 			</section>
 		</>
@@ -160,7 +123,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
 	const query = `*[_type == "post" && slug.current == '${slug}'][0]`;
-	const postsQuery = `*[_type == "post"]{
+	const postsQuery = `*[_type == "post" && publishedAt < now()] | order(publishedAt desc){
 		title,  slug, mainImage,  publishedAt, body 
 	 
 	}`;

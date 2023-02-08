@@ -6,8 +6,7 @@ import AppWrap from "../../wrapper/AppWrap";
 import { client, urlFor } from "../../lib/client";
 import Post from "../../components/Post";
 
-
-function Blog({posts}) {
+function Blog({ posts }) {
 	return (
 		<>
 			<section id="posts" className="container mx-auto px-7 mt-44">
@@ -15,11 +14,9 @@ function Blog({posts}) {
 					Last Posts
 				</h3>
 				<ul className="posts__container flex flex-wrap gap-7 justify-center text-graySecondary">
-				{posts?.map(post=>(
-					<Post data={post}/>
-				))}
-				
-		
+					{posts?.map((post) => (
+						<Post data={post} />
+					))}
 				</ul>
 			</section>
 		</>
@@ -27,7 +24,6 @@ function Blog({posts}) {
 }
 
 export const getServerSideProps = async () => {
-
 	const postsQuery = `*[_type == "post" && publishedAt < now()] | order(publishedAt desc){
 		title,
 		slug,
@@ -38,10 +34,10 @@ export const getServerSideProps = async () => {
 	}`;
 
 	const posts = await client.fetch(postsQuery);
-	console.log("🚀 ~ file: index.js:41 ~ getServerSideProps ~ posts", posts)
+	console.log("🚀 ~ file: index.js:41 ~ getServerSideProps ~ posts", posts);
 
 	return {
-		props: {  posts },
+		props: { posts },
 	};
 };
 

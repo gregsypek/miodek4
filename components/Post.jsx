@@ -12,16 +12,19 @@ const Post = ({data}) => {
 
 
   const {title, mainImage, body, publishedAt} = data;
-  console.log('data',data);
+  // console.log('data',data);
   return (
     <li
     className="post bg-whiteSecondary border-2 p-[2%]
     border-orangeTertiary rounded-md items-center py-7 flex flex-col
-    gap-7 shadow-md "
+    gap-7 shadow-md justify-start"
   >
   {/* {console.log('body',body)} */}
-    <img src={urlFor(mainImage).width(320).height(240).fit('max').auto('format')} alt={title || ' '}
+    <img src={`${ mainImage ? urlFor(mainImage).width(320).height(240).fit('max').auto('format') : "/no-image.png"}`} alt={title || ' '}
       loading="lazy"
+      width={320}
+      height={240}
+      className="w-[320px] h-[240px] object-contain"
     />
     <p className="post__title text-orangeTertiary font-bold text tracking-wider">
      {title}
@@ -37,7 +40,8 @@ const Post = ({data}) => {
    
     <Link
       href={`/blog/${data?.slug?.current}`}
-      className=" py-1 px-5 text-graySecondary bg-whitePrimary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md"
+      className=" py-1 px-5 text-graySecondary bg-whitePrimary rounded-full  hover:bg-whitePrimary uppercase text-base border  border-graySecondary shadow-md  mt-auto"
+    
     >
       Read more
     </Link>

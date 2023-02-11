@@ -10,14 +10,11 @@ body {
 	margin: 0;
 	font-family: "Reem Kufi", sans-serif;
 	overflow-x: hidden;
-
 	background-color: "#E6E8EC";
 }
 /* * {
 	border: 1px solid #000;
 } */
-
-
 
 a {
 	color: inherit;
@@ -75,11 +72,11 @@ a {
 	position: absolute;
 	content: url("../public/blog-gradient.svg");
 	z-index: -1;
-	top: -10rem;
-	opacity:0.5;
+	top: -18rem;
+	opacity: 0.5;
 	left: 0%;
-	width: 100rem;
-	height: 50rem;
+	width: 120rem;
+	height: 70rem;
 	transform:rotate(5deg);
 }
 /* .about {
@@ -88,24 +85,27 @@ a {
 .about::after {
 	position: absolute;
 	content: url("../public/about-gradient2.svg");
-	/* z-index: -2;
-
-	top: -11%;
-	right: 47rem;
-	width: 117%;
-	height: 65%;
-	transform: rotate(36deg); */
 	z-index: -2;
+
 	top: -70rem;
 	right: 10rem;
 	width: 2000px;
 	height: 4800px;
 	transform: rotate(57deg);
 }
+@media (min-width: 768px) {
+	.about::after {
+		top: -50rem;
+		height: 4200px;
+		width:3200px;
+	right:55rem;
+	transform: rotate(37deg);
+	}
+}
+
 .about::before {
 	position: absolute;
 	content: url("../public/about-gradient2.svg");
-
 	z-index: -2;
 	top: 43%;
 	left: -51rem;
@@ -116,7 +116,7 @@ a {
 @media (min-width: 768px) {
 	.about::before {
 		left: -20rem;
-		width: 88%;
+		width: 38%;
 	}
 }
 
@@ -303,7 +303,8 @@ footer {
 	bottom: -8%;
 	width: 70%;
 	height: auto;
-	border: 2px solid orange;
+	border: 2px solid 
+		rgba(236, 194, 108, 0.99);
 	background: white;
 	z-index: -1;
 	border-radius: 25px;
@@ -331,7 +332,8 @@ footer {
 	bottom: -120%;
 	width: 100%;
 	/* height: auto; */
-	border: 2px solid orange;
+	border: 2px solid 
+	rgba(236, 194, 108, 0.99);
 	background: white;
 	z-index: -1;
 	border-radius: 25px;

@@ -46,6 +46,7 @@ const ProductDetails = ({ product, products }) => {
 						<img src={urlFor(image && image[0])} width={381} height={390} />						
 					</div>
 					<div className="offer__miniature flex lg:flex-col lg:justify-center gap-4 ">
+					
 						{currentOtherSizes.length &&
 							currentOtherSizes.map((item, i) => (
 								<Link
@@ -54,8 +55,9 @@ const ProductDetails = ({ product, products }) => {
 						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer ${
 							 router.query.slug === item.slug.current  
 								? "bg-orangeQuaternary"
-								: "" 
-						}`}
+								: !router.query.slug & i === 0  
+								? "bg-orangeQuaternary" : ""
+						}` }
 									onClick={() => setIndex(i)}
 									key={item._id}
 								>						
@@ -68,6 +70,7 @@ const ProductDetails = ({ product, products }) => {
 									<strong className="text-orangePrimary">
 										{item.size.jar}ml
 									</strong>
+									{}
 								</Link>
 							))}				
 					</div>

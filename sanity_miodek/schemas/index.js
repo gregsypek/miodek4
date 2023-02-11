@@ -3,5 +3,6 @@ import banner from './banner'
 import testimonials from './testimonials'
 import jars from './jars'
 import post from './post'
+import gallery from './gallery'
 
-export const schemaTypes = [product, banner, testimonials, jars, post]
+export const schemaTypes = [product, banner, testimonials, jars, post, gallery]

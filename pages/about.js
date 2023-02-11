@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import AboutCarousel from "../components/AboutCarousel";
 import AppWrap from "../wrapper/AppWrap";
+import { client, urlFor } from "../lib/client";
 
-const About = () => {
+
+const About = ({gallery}) => {
 	return (
 		<>
 			{/* Intro section */}
@@ -33,57 +36,8 @@ const About = () => {
 					</p>
 				</div>
 			</section>
-			<section className="our-work container px-7 mx-auto  mt-44 ">
-				{/* <h3 className="text-base uppercase text-orangePrimary text-left ">
-					See our work
-				</h3> */}
-				<ul className="cards container flex flex-wrap gap-8 flex-col md:flex-row items-center md:justify-center ">
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
-						<h3 className="text-base uppercase text-orangePrimary text-left  ">
-							See our work
-						</h3>
-						<Image
-							src="/about/img1.jpg"
-							width={420}
-							height={307}
-							className="bg-center object-cover h-96 w-full"
-						></Image>
-					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
-						<h3 className="text-base uppercase text-orangePrimary text-left ">
-							&nbsp;
-						</h3>
-						<Image
-							src="/about/img2.jpg"
-							width={420}
-							height={307}
-							className="bg-center object-cover h-96 w-full"
-						></Image>
-					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
-						<h3 className="text-base uppercase text-orangePrimary text-left ">
-							&nbsp;
-						</h3>
-						<Image
-							src="/about/img3.jpg"
-							width={420}
-							height={307}
-							className="bg-center object-cover h-96 w-full"
-						></Image>
-					</li>
-					<li className="card bg-whiteSecondary  border-2 p-[2%] border-orangeQuaternary rounded-md w-full md:w-5/12">
-						<h3 className="text-base uppercase text-orangePrimary text-left ">
-							&nbsp;
-						</h3>
-						<Image
-							src="/about/img4.jpg"
-							width={420}
-							height={307}
-							className="bg-center object-cover h-96 w-full"
-						></Image>
-					</li>
-				</ul>
-			</section>
+			<AboutCarousel gallery={gallery}/>
+
 			<section className="the-movie container px-7 mx-auto  mt-44 flex flex-col md:flex-row gap-7 md:gap-10 lg:gap-14">
 				<div className="the-movie__screen self-end order-2 md:order-1 lg:w-[120%] xl:w-7/12">
 					<Image
@@ -124,7 +78,7 @@ const About = () => {
 						className="hidden lg:block w-4/5"
 					></Image>
 				</div>
-				<div className="here__map bg-whiteSecondary  border-2 p-[15px] pt-[30px] border-orangePrimary rounded-xl w-full md:w-2/3 shadow-md">
+				<div className="here__map bg-whiteSecondary  border-2 p-[15px] pt-[30px] border-orangeQuaternary rounded-xl w-full md:w-2/3 shadow-md">
 					<h3 className="text-base uppercase text-orangePrimary self-start   py-2">
 						We are here
 					</h3>
@@ -140,5 +94,14 @@ const About = () => {
 		</>
 	);
 };
+export const getServerSideProps = async () => {
+	const query = '*[_type == "gallery"]';
+
+	const gallery = await client.fetch(query);
+
+	return {
+		props: { gallery },
+	};
+}
 
 export default AppWrap(About, "about");

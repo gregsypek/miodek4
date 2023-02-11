@@ -8,7 +8,7 @@ import { PortableText } from "@portabletext/react";
 import LastPostMini from "../../components/LastPostMini";
 
 const PostDetails = ({ post, posts }) => {
-	const [showMore, setshowMore] = useState(false)
+	const [showMore, setshowMore] = useState(false);
 	const address = "url('/about/about-gradient2.svg')";
 	return (
 		<>
@@ -69,29 +69,36 @@ const PostDetails = ({ post, posts }) => {
 					</div>
 				</div>
 				<aside className="last-posts hidden lg:block lg:w-5/12 px-4">
-				<div className="text-base uppercase text-orangePrimary  flex justify-between text-left pb-5  max-h-[750px] ">
-						<button className="hover:cursor-pointer uppercase" onClick={()=>setshowMore(false)}>3 Last Posts</button> <button className="uppercase hover:cursor-pointer" onClick={()=>setshowMore(true)}>more...</button>
+					<div className="text-base uppercase text-orangePrimary  flex justify-between text-left pb-5  max-h-[750px] ">
+						<button
+							className="hover:cursor-pointer uppercase"
+							onClick={() => setshowMore(false)}
+						>
+							3 Last Posts
+						</button>{" "}
+						<button
+							className="uppercase hover:cursor-pointer"
+							onClick={() => setshowMore(true)}
+						>
+							more...
+						</button>
 					</div>
-				<div className="last-posts__slider overflow-y-scroll py-7 max-h-[800px] overflow-x-hidden ">
-				
-
-					<ul className="last-posts__list flex flex-col gap-7  ">
-					{showMore ? (posts.length &&
-							posts.map((post) => (
-						<LastPostMini post = {post}/>
-							))): (posts.length &&
-							posts.slice(0,3).map((post) => (
-								<LastPostMini post = {post}/>
-							))) }			
-					</ul>
+					<div className="last-posts__slider overflow-y-scroll py-7 max-h-[800px] overflow-x-hidden ">
+						<ul className="last-posts__list flex flex-col gap-7  ">
+							{showMore
+								? posts.length &&
+								  posts.map((post) => <LastPostMini post={post} />)
+								: posts.length &&
+								  posts.slice(0, 3).map((post) => <LastPostMini post={post} />)}
+						</ul>
 					</div>
 					<Image
-									className="blog__jar self-center  -z-[1] mt-36"
-									src="/JAR-FLOWERS.png"
-									width={398}
-									height={377}
-									alt="jar with flowers honey"
-								></Image>
+						className="blog__jar self-center  -z-[1] mt-36"
+						src="/JAR-FLOWERS.png"
+						width={398}
+						height={377}
+						alt="jar with flowers honey"
+					></Image>
 				</aside>
 			</section>
 		</>

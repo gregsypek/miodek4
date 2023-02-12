@@ -13,9 +13,7 @@ const AboutCarousel = ({ gallery }) => {
 		<section className=" container mx-auto mt-44">	
 			{gallery.length && (
 				<>
-				<h3 className="text-base uppercase text-orangePrimary text-center  md:px-7">
-				See our work
-			</h3>
+			
 					<div className="flex  justify-between md:justify-evenly content-center h-[500px] lg:h-[700px] w-full relative md:static ">
 					
 						<div
@@ -27,12 +25,15 @@ const AboutCarousel = ({ gallery }) => {
 							}
 						>
 							<AiOutlineLeftCircle
-								className="hover:cursor-pointer"
+								className="hover:cursor-pointer hover:bg-whitePrimary rounded-full"
 								color="#AC5A27"
 								size="50px"
 							/>
 						</div>
-						<div className="flex flex-col justify-center relative border-2 p-[1%] border-orangeQuaternary rounded-md  w-full md:w-10/12">				
+						<div className="flex flex-col justify-center relative border-2 p-[2%] border-orangeQuaternary rounded-md  w-full md:w-10/12">	
+						<h3 className="text-base uppercase text-orangePrimary text-center p-1  md:px-7">
+				See our work
+			</h3>			
 							<img
 								src={urlFor(gallery[currentIndex].imgurl)							
 									.fit("max")
@@ -53,7 +54,7 @@ const AboutCarousel = ({ gallery }) => {
 							}
 						>
 							<AiOutlineRightCircle
-								className="hover:cursor-pointer"
+								className="hover:cursor-pointer hover:bg-whitePrimary rounded-full"
 								color="#AC5A27"
 								size="50px"
 							/>

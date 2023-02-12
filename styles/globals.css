@@ -88,35 +88,37 @@ a {
 	z-index: -2;
 
 	top: -70rem;
-	right: 10rem;
-	width: 2000px;
-	height: 4800px;
-	transform: rotate(57deg);
+	right: -10rem;
+	/* width: 2000px;
+	height: 4800px; */
+	/* transform: rotate(57deg); */
 }
 @media (min-width: 768px) {
 	.about::after {
 		top: -50rem;
-		height: 4200px;
+		right: 15rem;
+		/* height: 4200px;
 		width:3200px;
 	right:55rem;
-	transform: rotate(37deg);
+	transform: rotate(37deg); */
 	}
 }
 
 .about::before {
 	position: absolute;
-	content: url("../public/about-gradient2.svg");
+	content: url("../public/about-gradient.svg");
 	z-index: -2;
-	top: 43%;
-	left: -51rem;
-	width: 106%;
-	height: 56%;
-	transform: rotate(133deg);
+	top: 88%;
+	display:none;
+	transform: rotate(-10deg); 
+
 }
-@media (min-width: 768px) {
+@media (min-width: 976px) {
 	.about::before {
-		left: -20rem;
-		width: 38%;
+		display:block;
+		left: 9rem;
+    width: 20%;
+
 	}
 }
 

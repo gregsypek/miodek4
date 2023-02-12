@@ -44,7 +44,7 @@ a {
 	position: absolute;
 	content: url("../public/hero-gradient.svg");
 	z-index: -2;
-	top: -1%;
+	top: -5%;
 	left: 47%;
 	width: 255%;
 	height: 128%;
@@ -52,16 +52,11 @@ a {
 
 @media (min-width: 768px) {
 	.hero::after {
-		/* position: absolute;
-		content: url("../public/hero-gradient.svg");
-		z-index: -1; */
-		top: -15%;
-		/* top: -15%; */
+		top: -18%;
 		left: 60%;
-		/* width: 100%;
-	height: 100%; */
 		width: 1682px;
 		height: 1882px;
+
 	}
 }
 #blog {

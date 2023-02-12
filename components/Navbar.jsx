@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	AiOutlineClose,
 	AiOutlineMenu,
@@ -19,6 +19,19 @@ const Navbar = () => {
 
 	const [show, handleShow] = useState(false);
 
+
+	const transitionNavBar = () => {
+		if (window.scrollY > 30) {
+			handleShow(true);
+		} else {
+			handleShow(false);
+		}
+	};
+	useEffect(() => {
+		window.addEventListener("scroll", transitionNavBar);
+		return () => window.removeEventListener("scroll", transitionNavBar);
+	}, []);
+
 	function NavigationLink({ href, text, router }) {
 		const isActive = router.asPath === (href === "/home" ? "/" : href);
 		return (
@@ -27,7 +40,7 @@ const Navbar = () => {
 				passHref
 				className={`${
 					isActive && "active"
-				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link`}
+				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link `}
 			>
 				{text}
 			</Link>
@@ -37,8 +50,8 @@ const Navbar = () => {
 	return (
 <>
 
-			<div className="fixed w-screen bg-white z-50  top-0">
-			<div className="container mx-auto flex items-center justify-between">
+			<div className={`fixed w-screen ${show && 'bg-white shadow-sm'} z-40  top-0 `}>
+			<div className="container px-8 mx-auto flex items-center justify-between">
 				{/* Logo */}
 				<Link href="/">
 					<Image src="/logo.svg" width={100} height={20} alt="image" />
@@ -107,7 +120,7 @@ const Navbar = () => {
 				{showCart && <Cart />}
 			</div>		
 
-			<hr className="border-t-grayPrimary relative z-[-2]" />
+			{/* <hr className="border-t-grayPrimary relative -z-[20]" /> */}
 </div>
 </>
 	);

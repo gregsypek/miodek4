@@ -32,7 +32,7 @@ const ProductDetails = ({ product, products }) => {
 	const { decQty, incQty, qty, onAdd } = useStateContext();
 	return (
 		<>
-			<section id="offer" className="container mx-auto px-7 mt-44 text-left">
+			<section id="offer" className="container mx-auto px-7 pt-52 text-left">
 				<h1 className="text-xl text-graySecondary max-w-medium mb-7">
 					Our honey comes in a variety of sizes and flavors, so you can find the
 					perfect option for your needs.

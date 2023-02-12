@@ -30,7 +30,7 @@ const AboutCarousel = ({ gallery }) => {
 								size="50px"
 							/>
 						</div>
-						<div className="flex flex-col justify-center relative border-2 p-[2%] border-orangeQuaternary rounded-md  w-full md:w-10/12">	
+						<div className="flex flex-col justify-center relative bg-white border-2 p-[2%] border-orangeQuaternary rounded-md  w-full md:w-10/12">	
 						<h3 className="text-base uppercase text-orangePrimary text-center p-1  md:px-7">
 				See our work
 			</h3>			

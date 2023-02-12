@@ -9,14 +9,13 @@ import HeroBanner from "../components/HeroBanner";
 import Testimonial from "../components/Testimonial";
 
 const Home = ({ bannerData, testimonials }) => {
-	console.log("🚀 ~ file: index.js:11 ~ Home ~ testimonials", testimonials);
 	return (
 		<>
 			{/* Hero Section */}
 
 			<section
 				id="hero"
-				className="bg-auto bg-no-repeat bg-center bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')] h-full"
+				className="bg-auto bg-no-repeat bg-center bg-[url('/hero-bg--phone.png')] md:bg-[url('/hero-bg--md.png')] lg:bg-[url('/hero-bg--tablet.png')] xl:bg-[url('/hero-bg.png')] h-full mt-20"
 			>
 				<div className="container flex items-center px-4  mx-auto pt-10  space-y-0 md:space-y-0 md:flex-row relative overflow-visible h-[56rem] ">
 					<div className="flex flex-col space-y-8 pl-2 md:pl-16  w-10/12 md:w-5/12 lg:w-6/12 absolute top-24 ">
@@ -33,7 +32,7 @@ const Home = ({ bannerData, testimonials }) => {
 							to ensure the highest quality and support for small businesses
 						</p> */}
 						<Link
-							href="/"
+							href="/offer"
 							className="py-2 px-7 text-white relative bg-orangeTertiary rounded-full hover:bg-orangeSecondary hover:cursor-pointer uppercase self-start"
 						>
 							Shop now
@@ -95,7 +94,7 @@ const Home = ({ bannerData, testimonials }) => {
 				{/* btn */}
 				<div className="container mx-auto mt-2 md:mt-12  flex justify-center">
 					<Link
-						href="/"
+						href="/offer"
 						className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full mb-44   hover:text-whiteSecondary hover:bg-graySecondary uppercase border  border-graySecondary"
 					>
 						View our pricing

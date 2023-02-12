@@ -11,7 +11,7 @@ const About = ({gallery}) => {
 			{/* Intro section */}
 			<section
 				id="about-us"
-				className=" container px-7 mx-auto mt-20 flex gap-10 flex-col items-center lg:flex-row "
+				className=" container px-7 mx-auto flex gap-10 flex-col items-center lg:flex-row pt-44"
 			>
 				<div className="about-us__picture w-full lg:w-1/2 ">
 					<h3 className="text-base uppercase text-orangePrimary text-left pl-10">
@@ -38,16 +38,16 @@ const About = ({gallery}) => {
 			</section>
 			<AboutCarousel gallery={gallery}/>
 
-			<section className="the-movie container px-7 mx-auto  mt-44 flex flex-col md:flex-row gap-7 md:gap-10 lg:gap-14">
+			<section className="the-movie container px-7 mx-auto  pt-60 flex flex-col md:flex-row gap-7 md:gap-10 lg:gap-14">
 				<div className="the-movie__screen self-end order-2 md:order-1 lg:w-[120%] xl:w-7/12">
 					<Image
 						src="/about/movie.png"
 						width={627}
 						height={354}
-						className="  the-movie__img "
+						className="the-movie__img "
 					></Image>
 				</div>
-				<div className="the-movie__info flex flex-col order-1 md:order-2 gap-7 w-3/4 pl-1 xl:w-5/12 xl:h-full">
+				<div className="the-movie__info flex flex-col order-1 md:order-2 gap-7 w-3/4 pl-1 xl:w-5/12 xl:h-full ">
 					<div className="the-movie__text flex flex-col gap-7 flex-shrink-0 lg:self-left ">
 						<h3 className="text-base uppercase text-orangePrimary self-start   ">
 							Watch the film

@@ -4,14 +4,14 @@ import React from "react";
 import { useStateContext } from "../context/StateContext";
 
 const Footer = () => {
-	const { showCart } = useStateContext();
+	const { showCart, toggle } = useStateContext();
 	return (
 		<footer className=" mx-auto pb-7 mt-20 static">
 			<hr className=" container px-7 mx-auto border-t-grayPrimary my-24 " />
 			<div
 				className={`footer__container container mx-auto pb-7 flex flex-col md:flex-row flex-wrap lg:px-7  md:justify-evenly gap-8 md:space-y-16 md:space-x-32  md:-mt-16   items-center md:items-baseline ${
-					showCart ? "static" : "relative"
-				} `}
+					showCart ? "hidden" : "relative"
+				} ${toggle ? "hidden" : ""}`}
 			>
 				<div className="flex flex-col space-y-3 items-center md:items-start text-graySecondary lowercase">
 					<Link href="/">

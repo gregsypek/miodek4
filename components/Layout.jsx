@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import { useStateContext } from "../context/StateContext";
 
 function Layout({ children }) {
-	const { showCart } = useStateContext();
+	const { showCart, toggle } = useStateContext();
 	return (
 		<div>
 			<Head>
@@ -15,7 +15,9 @@ function Layout({ children }) {
 				<Navbar />
 			</header>
 			{/* to hide all elements behind main layout after clicking cart icon*/}
-			<main className={`${showCart && "relative -z-10"}`}>{children}</main>
+
+		
+			<main className={`${showCart  && "relative -z-10"} ${toggle  && "relative -z-10"}`}>{children}</main>
 
 			<Footer />
 		</div>

@@ -71,13 +71,14 @@ a {
 .blog::after {
 	position: absolute;
 	content: url("../public/blog-gradient.svg");
+
 	z-index: -1;
-	top: -18rem;
-	opacity: 0.5;
-	left: 0%;
-	width: 120rem;
+	top: -34rem;
+	opacity: 0.6;
+	left: 22%;
+	width: 161rem;
 	height: 70rem;
-	transform:rotate(5deg);
+	transform: rotate(5deg);
 }
 /* .about {
 	overflow: hidden;
@@ -86,7 +87,7 @@ a {
 	position: absolute;
 	content: url("../public/about-gradient2.svg");
 	z-index: -2;
-
+	opacity: 0.8;
 	top: -70rem;
 	right: -10rem;
 	/* width: 2000px;
@@ -222,17 +223,29 @@ footer {
 /* show circle icon when active */
 .nav__link {
 	position: relative;
+
 }
 .nav__link::after {
 	position: absolute;
 	content: url("../public/circle.svg");
-	bottom: -36px;
-	left: 10px;
+	bottom: 0;
+	right: -125%;
 	opacity: 0;
 	width: 100%;
 	height: 100%;
 	transition: opacity ease 0.3s ease;
 }
+
+@media (min-width: 976px) {
+	.nav__link::after {
+
+		bottom: -36px;
+		left: 10px;
+		right:0;
+	}
+}
+
+
 
 .nav__link.active.nav__link::after {
 	opacity: 1;
@@ -455,7 +468,7 @@ footer {
 	} */
 	#posts::after {
 		position: absolute;
-		content: url("../public/posts/JAR-ACACIA--small.png");
+		content: url("../public/JAR-FLOWERS.png");
 		right: -45px;
 		bottom: 55px;
 		height: 10%;
@@ -470,7 +483,11 @@ footer {
 
 .last-posts__item {
 	position: relative;
+	transform: translateX(10px);
 }
+
+
+
 
  /* .last-posts__item::after {
 	position: absolute;
@@ -509,42 +526,6 @@ li.last-posts {
 
 }
 
-/* *::-webkit-scrollbar-thumb { 
-   background-color: linear-gradient(#ecbd79 0%, rgba(236, 194, 108, 0.99) 26.05%, #eaba86 66.67%, #ecb479 100%);   
-
- border-radius: 20px;      
-
-  border: 3px solid linear-gradient(#ecbd79 0%, rgba(236, 194, 108, 0.99) 26.05%, #eaba86 66.67%, #ecb479 100%); 
-	 border-radius: 15px;    
-
-} */
-
-/* #post {
-	position: relative;
-} */
-
-/* .blog__jar {
-	position: relative;
-}
-
-@media (min-width: 976px) {
-	.blog__jar::before {	
-		position: absolute;
-		content: url("../public/about/about-gradient2.svg");
-		left: 0;
-		top: 0;
-		z-index: -1;
-	} */
-	/* #post::after {
-		position: absolute;
-		content: url("../public/JAR-FLOWERS.png");
-		right: 0;
-		bottom: 200px;
-		height: 10%;
-		width: auto;
-		z-index: -1;
-	} */
-/* } */
 
 /* carousel animation */
 

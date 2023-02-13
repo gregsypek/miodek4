@@ -23,7 +23,7 @@ const ProductDetails = ({ product, products }) => {
 		.filter((jar) => jar.name.startsWith(currentHoneyName))
 		.sort((a, b) => a.size.jar - b.size.jar);
 
-	const { image, name, details, price,   } = product;
+	const { image, name, details, price } = product;
 
 	const jarWidth = ["38", "58", "88"];
 	const jarHeight = ["41", "61", "91"];
@@ -42,25 +42,24 @@ const ProductDetails = ({ product, products }) => {
 						className="offer__jar  border-2  p-14
 						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center h-[500px]"
 					>
-				
-						<img src={urlFor(image && image[0])} width={381} height={390} />						
+						<img src={urlFor(image && image[0])} width={381} height={390} />
 					</div>
 					<div className="offer__miniature flex lg:flex-col lg:justify-center gap-4 ">
-					
 						{currentOtherSizes.length &&
 							currentOtherSizes.map((item, i) => (
 								<Link
 									href={`/offer/${item?.slug?.current}`}
 									className={`offer__jar bg-whiteSecondary border-2 p-2  
 						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer ${
-							 router.query.slug === item.slug.current  
+							router.query.slug === item.slug.current
 								? "bg-orangeQuaternary"
-								: !router.query.slug & i === 0  
-								? "bg-orangeQuaternary" : ""
-						}` }
+								: !router.query.slug & (i === 0)
+								? "bg-orangeQuaternary"
+								: ""
+						}`}
 									onClick={() => setIndex(i)}
 									key={item._id}
-								>						
+								>
 									<img
 										src={urlFor(item.image[0])}
 										width={`${jarWidth[i]}`}
@@ -72,12 +71,13 @@ const ProductDetails = ({ product, products }) => {
 									</strong>
 									{}
 								</Link>
-							))}				
+							))}
 					</div>
 
 					<div className="offer__info flex flex-col space-y-4 lg:w-5/12 justify-start">
 						<h3 className="text-base uppercase text-orangePrimary text-left">
-							{name}</h3>
+							{name}
+						</h3>
 						<div className="offer__details flex flex-col space-y-4 ">
 							<div className="offer__stars flex items-center">
 								<AiFillStar color="#F2A603" size="1.5em" />
@@ -115,7 +115,7 @@ const ProductDetails = ({ product, products }) => {
 									<span
 										className=" border-r-2 w-12 h-full
 													border-graySecondary
-													rounded-sm flex justify-center items-center text-xl text-graySecondary hover:cursor-pointer hover:bg-whitePrimary"
+													rounded-sm flex justify-center items-center text-xl text-graySecondary  "
 									>
 										{qty}
 									</span>

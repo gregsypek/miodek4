@@ -51,7 +51,7 @@ const Navbar = () => {
 <>
 
 			<div className={`fixed w-screen ${show && 'bg-white shadow-sm'} z-40  top-0 `}>
-			<div className="container px-8 mx-auto flex items-center justify-between">
+			<div className=" px-8 mx-auto flex items-center justify-between">
 				{/* Logo */}
 				<Link href="/">
 					<Image src="/logo.svg" width={100} height={20} alt="image" />
@@ -85,7 +85,7 @@ const Navbar = () => {
 						<div className="w-screen h-screen bg-gradientRGBA fixed right-0 top-0  z-50 transition-all overflow-y-hidden " >
 					
 							<div className="h-full w-7/12  bg-white relative float-right py-10 px-6 overflow-auto">
-							<AiOutlineClose className="w-6 h-6 text-brownPrimary absolute right-0 top-6 mr-8 hover: cursor-pointer" onClick={() => setToggle(false) }/>
+							<AiOutlineClose className="w-6 h-6 text-brownPrimary absolute right-0 top-6 mr-6 hover: cursor-pointer" onClick={() => setToggle(false) }/>
 								<nav className="text-xl flex flex-col space-y-14 uppercase
 								items-end baseline m-24 ">
 									{navigationRoutes.map((singleRoute) => {

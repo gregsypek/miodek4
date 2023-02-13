@@ -21,7 +21,7 @@ const Cart = () => {
 				className="w-screen h-screen bg-gradientRGBA fixed right-0 top-0 z-50 transition-all overflow-y-hidden"
 				ref={cartRef}
 			>
-				<div className="h-full w-11/12 md:w-8/12 lg:w-[600px] bg-whitePrimary relative float-right py-10 px-6 overflow-auto">
+				<div className="h-full w-11/12 md:w-8/12 lg:w-[600px] bg-whitePrimary relative float-right py-10 px-6 sm:px-12 overflow-auto">
 					<div className="flex gap-4 items-center">
 						<button
 							type="button"
@@ -55,10 +55,10 @@ const Cart = () => {
 						{cartItems.length >= 1 &&
 							cartItems.map((item) => (
 								<>
-									<div className="cart__middle flex flex-col px-12 md:px-0 md:flex-row gap-4 md:gap-12 mt-16 md:mt-8" 	>
+									<div className="cart__middle flex   md:px-0 md:flex-row gap-4 sm:gap-16 md:gap-12 mt-16 md:mt-8" 	>
 									{/* {		  console.log("🚀 ~ file: Cart.jsx:128 ~ Cart ~ cartItems", cartItems)} */}
 										<div
-											className="bg-gray-300 py-4 px-6  rounded-[25px] grid place-items-center max-w-[150px] md:max-w-[200px] border p-2 border-orangeTertiary"
+											className="bg-gray-300  p-1 md:py-4 md:px-6  rounded-sm md:rounded-[25px] grid place-items-center max-w-[80px] sm:max-w-[120px] md:max-w-[200px] border  border-orangeTertiary"
 											key={item._id}
 										>
 										{/* { console.log("🚀 ~ file: Cart.jsx:61 ~ Cart ~ item", item)} */}
@@ -71,7 +71,7 @@ const Cart = () => {
 
 										<div className="flex flex-col gap-2 md:gap-8  md:justify-evenly flex-1">
 											<div className="flex justify-between">
-												<h5 className="text-base uppercase text-orangePrimary">
+												<h5 className="text-sm md:text-base uppercase text-orangePrimary">
 													{item.name}
 												</h5>
 												<h4 className="text-xl text-graySecondary">

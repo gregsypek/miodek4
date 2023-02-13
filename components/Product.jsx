@@ -8,7 +8,7 @@ const Product = ({ product }) => {
 		<>
 			<Link
 				href={`/offer/${product?.slug?.current}`}
-				className="offer__like flex flex-col mt-20  "
+				className="offer__like flex flex-col   "
 			>
 				<div
 					className="offer__jar bg-grayTertiary py-11 px-14

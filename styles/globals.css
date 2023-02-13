@@ -526,24 +526,24 @@ li.last-posts {
 
 .marquee {
 	position: relative;
-	height: 400px;
+	/* height: 400px; */
 	width: 100%;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 /* .track {
 	animation: marquee 10s linear infinite;
 	width: 550%;
 } */
 .track {
-	position: absolute;
-	white-space: nowrap;
-	will-change: transform;
-	animation: marquee 13s linear infinite;
-	width: 180%;
+	/* position: absolute; */
+	/* white-space: nowrap; */
+	/* will-change: transform; */
+	/* animation: marquee 28s linear infinite; */
+	/* width: 200%; */
+	display:grid;
 }
-.track:hover {
-	animation-play-state: paused;
-}
+
+
 @keyframes marquee {
 	from {
 		transform: translateX(0);
@@ -552,3 +552,38 @@ li.last-posts {
 		transform: translateX(-20%);
 	}
 }
+
+@media (min-width: 768px) {
+
+	.marquee {
+		position: relative;
+		height: 400px;
+		width: 300%;
+		overflow-x: hidden;
+	}
+
+	.track {
+		display:flex;
+		position: absolute;
+		white-space: nowrap;
+		will-change: transform;
+		animation: marquee 5s linear infinite;
+		width: 300%;
+	}
+
+.track {	
+	animation: marquee 50s linear infinite;
+}
+@keyframes marquee {
+	from {
+		transform: translateX(5%);
+	}
+	to {
+		transform: translateX(-20%);
+	}
+}
+}
+.track:hover {
+	animation-play-state: paused;
+}
+

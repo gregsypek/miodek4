@@ -87,9 +87,9 @@ const PostDetails = ({ post, posts }) => {
 						<ul className="last-posts__list flex flex-col gap-7  ">
 							{showMore
 								? posts.length &&
-								  posts.map((post) => <LastPostMini post={post} />)
+								  posts.map((post) => <LastPostMini post={post} key={post.title} />)
 								: posts.length &&
-								  posts.slice(0, 3).map((post) => <LastPostMini post={post} />)}
+								  posts.slice(0, 3).map((post) => <LastPostMini post={post} key={post.title}/>)}
 						</ul>
 					</div>
 					<Image

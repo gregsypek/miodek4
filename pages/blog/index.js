@@ -12,10 +12,11 @@ function Blog({ posts }) {
 			<section id="posts" className="container mx-auto px-7 mt-44">
 				<h3 className="text-base uppercase text-orangePrimary text-left pb-5 pl-2 md:pl-12">
 					Last Posts
-				</h3>
+				</h3>		
 				<ul className="posts__container flex flex-wrap gap-7 justify-center text-graySecondary">
+
 					{posts?.map((post) => (
-						<Post data={post} />
+						<Post data={post} key={post.title}/>
 					))}
 				</ul>
 			</section>

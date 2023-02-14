@@ -25,11 +25,15 @@ const ProductDetails = ({ product, products }) => {
 
 	const { image, name, details, price } = product;
 
-	const jarWidth = ["38", "58", "88"];
-	const jarHeight = ["41", "61", "91"];
+	const jarWidth = ["38", "58", "88","90"];
+		const jarHeight = ["41", "61", "91","100"];
 
 	const [index, setIndex] = useState(0);
-	const { decQty, incQty, qty, onAdd } = useStateContext();
+	const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+	const handleBuyNow = () => {
+		onAdd(product, qty);
+		setShowCart(true);
+	};
 	return (
 		<>
 			<section id="offer" className="container mx-auto px-7 pt-52 text-left">
@@ -139,8 +143,9 @@ const ProductDetails = ({ product, products }) => {
 								<Link
 									href="/"
 									className=" py-2 px-7 border-2 border-transparent text-white bg-orangeTertiary rounded-full hover:bg-orangeSecondary uppercase justify-self-start"
+									onClick={handleBuyNow}
 								>
-									Shop now
+									Buy now
 								</Link>
 							</div>
 						</div>

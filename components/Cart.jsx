@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
+import getStripe from "../lib/getStripe";
+import toast from "react-hot-toast";
+
 
 import {
 	AiOutlineLeftCircle,
@@ -15,6 +18,27 @@ const Cart = () => {
 	const cartRef = useRef();
 	const { totalPrice, totalQuantities, cartItems, setShowCart,toggleCartItemQuantity,onRemove } =
 		useStateContext();
+
+		const handleCheckout = async () => {
+			const stripe = await getStripe();
+	
+			const response = await fetch("/api/stripe", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(cartItems),
+			});
+	
+			if (response.statusCode === 500) return;
+	
+			const data = await response.json();
+	
+			toast.loading("Redirecting...");
+	
+			stripe.redirectToCheckout({ sessionId: data.id });
+		};
+
 	return (
 		<>
 			<div
@@ -54,8 +78,8 @@ const Cart = () => {
 					
 						{cartItems.length >= 1 &&
 							cartItems.map((item) => (
-								<>
-									<div className="cart__middle flex   md:px-0 md:flex-row gap-4 sm:gap-16 md:gap-12 mt-16 md:mt-8" 	>
+					
+									<div className="cart__middle flex   md:px-0 md:flex-row gap-4 sm:gap-16 md:gap-12 mt-16 md:mt-8" key={item._id}	>
 									{/* {		  console.log("🚀 ~ file: Cart.jsx:128 ~ Cart ~ cartItems", cartItems)} */}
 										<div
 											className="bg-gray-300  p-1 md:py-4 md:px-6  rounded-sm md:rounded-[25px] grid place-items-center max-w-[80px] sm:max-w-[120px] md:max-w-[200px] border  border-orangeTertiary"
@@ -120,10 +144,10 @@ const Cart = () => {
 											</div>
 										</div>
 									</div>
-								</>
+					
 							))}
 						{cartItems.length >= 1 && (
-							<div className="cart__bottom mt-24  flex flex-col gap-12 px-12 md:px-0">
+							<div className="cart__bottom mt-24  flex flex-col gap-12 px-12 md:px-0 ">
 								<div className="flex justify-between">
 									<p className="text-xl font-bold uppercase text-orangePrimary ">
 										Subtotal
@@ -132,7 +156,7 @@ const Cart = () => {
 								</div>
 								<button
 									type="button"
-									onClick={() => setShowCart(false)}
+									onClick={handleCheckout}
 									className="	self-center py-2 px-7 text-white relative bg-orangeTertiary rounded-full hover:bg-orangeSecondary hover:cursor-pointer uppercase "
 								>
 									Pay with stripe

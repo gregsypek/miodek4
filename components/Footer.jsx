@@ -20,7 +20,7 @@ const Footer = () => {
 							width={100}
 							height={20}
 							alt="small logo"
-							className="footer__logo"
+							className="footer__logo h-auto"
 						/>
 					</Link>
 					<Link href="#" className="hover:text-red-300 pt-5 ">

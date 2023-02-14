@@ -22,6 +22,7 @@ const About = ({gallery}) => {
 						width={512}
 						height={453}
 						className="pl-[40px]"
+						alt="Honey CEO"
 					></Image>
 				</div>
 				<div className="about-us__text  w-full flex justify-center lg:w-1/2 max-w-readable ">
@@ -45,6 +46,7 @@ const About = ({gallery}) => {
 						width={627}
 						height={354}
 						className="the-movie__img "
+						alt="movie"
 					></Image>
 				</div>
 				<div className="the-movie__info flex flex-col order-1 md:order-2 gap-7 w-3/4 pl-1 xl:w-5/12 xl:h-full ">
@@ -76,6 +78,7 @@ const About = ({gallery}) => {
 						width={363}
 						height={344}
 						className="hidden lg:block w-4/5"
+						alt="honey jar"
 					></Image>
 				</div>
 				<div className="here__map bg-whiteSecondary  border-2 p-[15px] pt-[30px] border-orangeQuaternary rounded-xl w-full md:w-2/3 shadow-md">
@@ -84,10 +87,10 @@ const About = ({gallery}) => {
 					</h3>
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36091.741337392035!2d19.969637754797713!3d50.06983901804432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716451be258d0e9%3A0x20dc010f89ef18eb!2zxYHEhWtpIE5vd29odWNraWU!5e0!3m2!1spl!2spl!4v1591547613375!5m2!1spl!2spl"
-						allowfullscreen=""
+						allowFullScreen=""
 						aria-hidden="false"
-						tabindex="0"
-						class="here__iframe w-full h-[500px]"
+						tabIndex="0"
+						className="here__iframe w-full h-[500px]"
 					></iframe>
 				</div>
 			</section>

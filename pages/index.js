@@ -151,7 +151,7 @@ const Home = ({ bannerData, testimonials }) => {
 				</div>
 				<div className="container gap-y-20 lg:gap-x-20 px-4 md:px-8 lg:px-28 mt-24 flex flex-col content-center lg:flex-row justify-center flex-wrap mx-auto flex-grow flex-shrink basis-80 items-stretch ">
 					{testimonials?.map((testimonial) => (
-						<Testimonial data={testimonial} />
+						<Testimonial data={testimonial} key={testimonial._id}/>
 					))}
 				</div>
 			</section>

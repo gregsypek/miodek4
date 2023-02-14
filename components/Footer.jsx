@@ -23,48 +23,47 @@ const Footer = () => {
 							className="footer__logo h-auto"
 						/>
 					</Link>
-					<Link href="#" className="hover:text-red-300 pt-5 ">
+					
+					<Link href="/" className="hover:text-orangePrimary pt-5 ">
 						Home
 					</Link>
-					<Link href="#" className="hover:text-red-300 ">
+					<Link href="/about" className="hover:text-orangePrimary ">
 						About
 					</Link>
-					<Link href="#" className="hover:text-red-300 ">
+					<Link href="/blog" className="hover:text-orangePrimary ">
 						Blog
 					</Link>
-					<Link href="#" className="hover:text-red-300 ">
+					<Link href="offer" className="hover:text-orangePrimary ">
 						Offer
 					</Link>
 				</div>
 				<div className="flex flex-col space-y-3 text-graySecondary lowercase items-center md:items-start ">
 					<h3 className="font-bold text-xl lowercase mb-5 ">contact</h3>
-					<Link href="#" className="hover:text-red-300 text-graySecondary f">
+					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
 						Email
 					</Link>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
+					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
 						Linkedin
 					</Link>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
+					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
 						Instagram
 					</Link>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
+					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
 						Twitter
 					</Link>
 				</div>
 				<div className="flex flex-col space-y-3 text-graySecondary lowercase items-center md:items-start">
 					<h3 className="text-bold text-xl lowercase  mb-5 ">market</h3>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
-						Home
+					<Link href="/payments" className="hover:text-orangePrimary text-graySecondary">
+					payment methods
 					</Link>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
-						About
+					<Link href="/rules" className="hover:text-orangePrimary text-graySecondary">
+					rules and regulations
 					</Link>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
-						Blog
+					<Link href="/privacy" className="hover:text-orangePrimary text-graySecondary">
+						privacy policy
 					</Link>
-					<Link href="#" className="hover:text-red-300 text-graySecondary">
-						Offer
-					</Link>
+			
 				</div>
 				<div className="flex flex-col space-y-3 text-graySecondary lowercase items-center md:items-start ">
 					<h3 className="text-bold text-xl lowercase mb-5 ">
@@ -72,16 +71,16 @@ const Footer = () => {
 					</h3>
 
 					<form>
-						<div className="flex rounded-full bg-brownQuaternary text-white  static">
+						<div className="flex rounded-full bg-brownQuaternary text-brownPrimary  static">
 							<input
 								type="email"
-								className="flex-1 rounded-full focus:outline-none bg-brownQuaternary placeholder:text-brownPrimary py-2 px-7"
+								className="flex-1 rounded-full focus:outline-none bg-brownQuaternary placeholder:text-graySecondary placeholder:font-thin py-2 px-7"
 								placeholder="Email Address "
 							/>
 							<input
 								type="submit"
 								value="Submit"
-								className="py-2 px-7 bg-brownPrimary rounded-full  hover:bg-blackPrimary uppercase hover:cursor-pointer"
+								className="py-2 px-7 bg-brownPrimary rounded-full text-whiteSecondary hover:bg-blackPrimary uppercase hover:cursor-pointer"
 							/>
 						</div>
 					</form>

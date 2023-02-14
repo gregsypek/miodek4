@@ -47,19 +47,10 @@ const Home = ({ bannerData, testimonials }) => {
 							</Link>
 						</div> */}
 					</div>
-					{/* <Image
-						src="/hero-bg.png"
-						width={1440}
-						height={800}
-						alt="image"
-					></Image> */}
+			
 				</div>
 			</section>
-			<section id="features" className="px-4 md:px-8">
-				{/* <section
-				id="features"
-				className=" bg-[url('/features-gradient.svg')] bg-[length:400px_400px]  md:bg-[length:600px_400px] bg-no-repeat md:bg-left-bottom "
-			> */}
+			<section id="features" className="px-4 md:px-8">		
 				<div className="features__top container flex px-7 mx-auto -mt-20 md:mt-4 lg:mt-44 justify-center lg:justify-evenly flex-wrap ">
 					<div className="feature space-y-7  ">
 						<h3 className="text-base uppercase text-orangePrimary text-center lg:text-left">

@@ -26,24 +26,17 @@ const HeroBanner = ({ heroBanner }) => {
 							height={350}
 							className="m-0  md:-mt-24 "
 							alt={heroBanner.product}
-						/>
-						{/* <Image
-							src="/JAR-STRAWBERRY.png"
-							width={370}
-							height={350}
-							className="m-0  md:-mt-24 "
-							alt={heroBanner.product}
-						></Image> */}
+						/>			
 					</div>
 					<div className="right flex flex-col justify-evenly gap-y-5 items-center md:items-start">
-						<p className="uppercase font-bold text-whitePrimary text-2xl">
+						<p className="uppercase font-bold text-whitePrimary text-2xl text-center md:text-left">
 							{heroBanner.product}
 						</p>
 						<h2 className="uppercase font-bold text-orangePrimary text-3xl">
 							{heroBanner.desc}
 						</h2>
 						<Link
-							href="/"
+							href={`/offer`}
 							className="py-2 px-7 text-blackPrimary bg-whiteSecondary rounded-full hover:bg-whitePrimary uppercase self-center md:self-start"
 						>
 							{heroBanner.buttonText}

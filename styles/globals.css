@@ -40,7 +40,7 @@ a {
 
 /* BACKGROUND LAYOUTS STARTING FROM THE TOP PAGE */
 
-.hero::after {
+/* .hero::after {
 	position: absolute;
 	content: url("../public/hero-gradient.svg");
 	z-index: -2;
@@ -57,7 +57,7 @@ a {
 		width: 1682px;
 		height: 1882px;
 	}
-}
+} */
 #blog {
 	overflow: hidden;
 }

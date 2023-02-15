@@ -1,0 +1,25 @@
+
+
+
+/* BACKGROUND LAYOUTS STARTING FROM THE TOP PAGE */
+
+.hero::after {
+	position: absolute;
+	content: url("../public/hero-gradient.svg");
+	z-index: -2;
+	top: -5%;
+	left: 47%;
+	width: 255%;
+	height: 128%;
+}
+
+@media (min-width: 768px) {
+	.hero::after {
+		top: -18%;
+		left: 60%;
+		width: 1682px;
+		height: 1882px;
+	}
+}
+
+

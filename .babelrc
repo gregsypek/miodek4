@@ -1,4 +1,8 @@
 {
-  // "presets": ["@babel/preset-react"]
-"presets": ["next/babel"]
+  "presets": ["@babel/preset-react"],
+  "env": {
+    "development": {
+      "presets": [["@babel/preset-react", { "development": true }]]
+    }
+  }
 }

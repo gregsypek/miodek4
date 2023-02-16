@@ -40,7 +40,7 @@ const Navbar = () => {
 				passHref
 				className={`${
 					isActive && "active"
-				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link `}
+				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link relative after:content-link`}
 			>
 				{text}
 			</Link>

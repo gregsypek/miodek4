@@ -39,6 +39,9 @@ module.exports = {
 				gradientRGBA:
 					"linear-gradient(rgba(236,189,121,.9) 0%, rgba(236, 194, 108, 0.91) 26.05%, rgba(234,186,134,0.9) 66.67%, rgba(236,180,121,0.9) 100%)",
 			},
+		  content: {
+        'link': 'url("../public/circle.svg")',
+      },
 
 			maxWidth: {
 				readable: "50ch",

@@ -38,112 +38,6 @@ a {
 	}
 } */
 
-/* BACKGROUND LAYOUTS STARTING FROM THE TOP PAGE */
-
-/* .hero::after {
-	position: absolute;
-	content: url("../public/hero-gradient.svg");
-	z-index: -2;
-	top: -5%;
-	left: 47%;
-	width: 255%;
-	height: 128%;
-}
-
-@media (min-width: 768px) {
-	.hero::after {
-		top: -18%;
-		left: 60%;
-		width: 1682px;
-		height: 1882px;
-	}
-} */
-#blog {
-	overflow: hidden;
-}
-
-.blog::after {
-	position: absolute;
-	content: url("../public/blog-gradient.svg");
-
-	z-index: -1;
-	top: -34rem;
-	opacity: 0.6;
-	left: 22%;
-	width: 161rem;
-	height: 70rem;
-	transform: rotate(5deg);
-}
-/* .about {
-	overflow: hidden;
-} */
-.about::after {
-	position: absolute;
-	content: url("../public/about-gradient2.svg");
-	z-index: -2;
-	opacity: 0.8;
-	top: -70rem;
-	right: -10rem;
-}
-@media (min-width: 768px) {
-	.about::after {
-		top: -50rem;
-		right: 15rem;
-	}
-}
-
-.about::before {
-	position: absolute;
-	content: url("../public/about-gradient.svg");
-	z-index: -2;
-	top: 88%;
-	display: none;
-	transform: rotate(-10deg);
-}
-@media (min-width: 976px) {
-	.about::before {
-		display: block;
-		left: 9rem;
-		width: 20%;
-	}
-}
-
-.offer::before {
-	position: absolute;
-	content: url("../public/offer-gradient.svg");
-	z-index: -1;
-	top: -25%;
-	right: -10%;
-	width: 90%;
-	height: 100%;
-}
-.offer::after {
-	position: absolute;
-	content: url("../public/offer-gradient2.svg");
-	z-index: -1;
-	right: -47%;
-	width: 91%;
-}
-
-@media (min-width: 768px) {
-	.offer::after {
-		bottom: 17%;
-		left: -70%;
-		height: 97%;
-		width: 83%;
-	}
-}
-@media (min-width: 976px) {
-	.offer::after {
-		bottom: 60%;
-	}
-}
-@media (min-width: 768px) {
-	.offer::before {
-		top: -21%;
-		right: -54%;
-	}
-}
 footer {
 	overflow: hidden;
 }
@@ -174,7 +68,8 @@ footer {
 }
 .nav__link::after {
 	position: absolute;
-	content: url("../public/circle.svg");
+	/* content it's styled by tailwind in Navbar Component */
+	/* content: url("../public/circle.svg"); */
 	bottom: 0;
 	right: -125%;
 	opacity: 0;
@@ -198,7 +93,6 @@ footer {
 .features__list {
 	justify-content: center;
 	align-items: center;
-	list-style-image: url("../public/circle.svg");
 }
 .features__list li {
 	list-style: none;
@@ -211,22 +105,11 @@ footer {
 	height: 24px;
 	width: 24px;
 	margin-right: 1rem;
-
-	background-image: url("../public/circle.svg");
+	/* check gradients.module.css component */
+	/* background-image: url("../public/circle.svg"); */
 }
 
-#features picture {
-	position: relative;
-}
-#features picture::before {
-	position: absolute;
-	top: -70%;
-	right: 150%;
-	content: url("../public/features-gradient.svg");
-	z-index: -1;
-	height: 100%;
-	width: 100%;
-}
+
 
 .gradient {
 	height: auto;
@@ -307,23 +190,6 @@ footer {
 	.here__iframe {
 		width: calc(100% + 5rem);
 		transform: translateX(-5rem);
-	}
-}
-
-/* posts */
-#posts {
-	position: relative;
-}
-
-@media (min-width: 1440px) {
-	#posts::after {
-		position: absolute;
-		content: url("../public/JAR-FLOWERS.png");
-		right: -45px;
-		bottom: 55px;
-		height: 10%;
-		width: auto;
-		z-index: 1;
 	}
 }
 

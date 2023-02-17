@@ -53,7 +53,7 @@ const ProductDetails = ({ product, products }) => {
 							currentOtherSizes.map((item, i) => (
 								<Link
 									href={`/offer/${item?.slug?.current}`}
-									className={`offer__jar bg-whiteSecondary border-2 p-2  
+									className={`offer__jar border-2 p-2  
 						border-orangeTertiary rounded-xl  grid place-items-center hover:bg-orangeQuaternary hover:cursor-pointer ${
 							router.query.slug === item.slug.current
 								? "bg-orangeQuaternary"

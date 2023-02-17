@@ -33,6 +33,7 @@ const Navbar = () => {
 	}, []);
 
 	function NavigationLink({ href, text, router }) {
+
 		const isActive = router.asPath === (href === "/home" ? "/" : href);
 
 		return (
@@ -41,12 +42,14 @@ const Navbar = () => {
 			<Link
 				href={href === "/home" ? "/" : href}
 				passHref
+				basePath
 				className={`${
 					isActive && "active"
-				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link relative after:content-link after:bottom-0 after:-right-[125%] after:w-full after:h-full lg:after:bottom-[-36px] lg:after:left-[10px] lg:after:right-0`}
+				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link relative after:content-[url("../public/circle.svg")] after:bottom-0 after:-right-[125%] after:w-full after:h-full lg:after:bottom-[-36px] lg:after:left-[10px] lg:after:right-0`}
 			>
 				{text}
 			</Link>
+			{/* after:content-link */}
 {/* <Image src="/circle.svg" alt="cirlce" width={25} height={25}/> */}
 			</>
 		);

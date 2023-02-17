@@ -11,12 +11,12 @@ import {
 import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
 
+
 const navigationRoutes = ["home", "about", "blog", "offer"];
 
 const Navbar = () => {
 	const { showCart, setShowCart, totalQuantities, toggle, setToggle } = useStateContext();
 	const router = useRouter();
-
 	const [show, handleShow] = useState(false);
 
 
@@ -34,16 +34,21 @@ const Navbar = () => {
 
 	function NavigationLink({ href, text, router }) {
 		const isActive = router.asPath === (href === "/home" ? "/" : href);
+
 		return (
+			<>
+
 			<Link
 				href={href === "/home" ? "/" : href}
 				passHref
 				className={`${
 					isActive && "active"
-				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link relative after:content-link`}
+				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link relative after:content-link after:bottom-0 after:-right-[125%] after:w-full after:h-full lg:after:bottom-[-36px] lg:after:left-[10px] lg:after:right-0`}
 			>
 				{text}
 			</Link>
+{/* <Image src="/circle.svg" alt="cirlce" width={25} height={25}/> */}
+			</>
 		);
 	}
 
@@ -78,11 +83,11 @@ const Navbar = () => {
 						className="open block cursor-pointer md:hidden  focus:outline-none"
 						onClick={() => setToggle(true)}
 					>
-						<AiOutlineMenu className="w-6 h-6 text-brownPrimary " />
+						<AiOutlineMenu className="w-6 h-6 text-brownPrimary" />
 					</button>
 
 					{toggle && (
-						<div className="w-screen h-screen bg-gradientRGBA fixed right-0 top-0  z-50 transition-all overflow-y-hidden " >
+						<div className="w-screen h-screen bg-gradientRGBA fixed right-0 top-0 z-50 transition-all overflow-y-hidden " >
 					
 							<div className="h-full w-7/12  bg-white relative float-right py-10 px-6 overflow-auto">
 							<AiOutlineClose className="w-6 h-6 text-brownPrimary absolute right-0 top-6 mr-6 hover: cursor-pointer" onClick={() => setToggle(false) }/>
@@ -107,9 +112,7 @@ const Navbar = () => {
 				<button
 					type="button"
 					className="relative md:order-1"
-					onClick={() => setShowCart(true)}
-
-					
+					onClick={() => setShowCart(true)}					
 				>
 					<AiOutlineShopping color="#A74E12" size="1.7em" />
 					<span className="cart-tem-qty absolute bg-orangePrimary text-whitePrimary rounded-full -right-2 -top-1 w-5 h-5 flex justify-center align-middle text-sm">

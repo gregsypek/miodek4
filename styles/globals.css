@@ -99,6 +99,7 @@ footer {
 	display: flex;
 	align-content: center;
 }
+
 .features__list li::before {
 	content: "";
 	display: inline-block;
@@ -108,8 +109,6 @@ footer {
 	/* check gradients.module.css component */
 	/* background-image: url("../public/circle.svg"); */
 }
-
-
 
 .gradient {
 	height: auto;

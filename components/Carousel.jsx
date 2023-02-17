@@ -11,7 +11,7 @@ const Carousel = ({ products }) => {
 					onClick={() => setShowAll(true)}
 					className=" btn btn-empty py-2 px-7 text-orangePrimary bg-whiteSecondary rounded-full     hover:text-orangeSecondary uppercase border-2 mb-12 border-orangePrimary hidden md:block m-auto"
 				>
-					Show me all
+					Show me all products
 				</button>
 			)}
 			<div className="flex  items-center gap-14 justify-center">
@@ -45,7 +45,7 @@ const Carousel = ({ products }) => {
 						onClick={() => setShowAll(false)}
 						className=" btn btn-empty py-2 px-7 text-orangePrimary bg-whiteSecondary rounded-full     hover:text-orangeSecondary uppercase border-2  border-orangePrimary mx-auto mt-12"
 					>
-						hide all
+						hide all products
 					</button>
 				</div>
 			)}

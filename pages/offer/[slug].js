@@ -43,8 +43,8 @@ const ProductDetails = ({ product, products }) => {
 				</h1>
 				<div className="offer__box flex justify-left flex-col lg:flex-row  gap-24 lg:gap-16">
 					<div
-						className="offer__jar  border-2  p-14
-						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center h-[500px]"
+						className="offer__jar  border-2 p-4 sm:p-7 md:p-14
+						border-orangeTertiary rounded-md  lg:w-6/12 grid place-items-center h-[300px] sm:h-[500px]"
 					>
 						<img src={urlFor(image && image[0])} width={381} height={390} />
 					</div>
@@ -131,11 +131,11 @@ const ProductDetails = ({ product, products }) => {
 									</span>
 								</div>
 							</div>
-							<div className="offer__btns flex flex-col md:flex-row mt-12 gap-7 self-start md:mt-0">
+							<div className="offer__btns flex flex-wrap flex-col md:flex-row mt-12 gap-7 lg:gap-3 self-start md:mt-0">
 								<button
 									type="button"
 									onClick={() => onAdd(product, qty)}
-									className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full   hover:bg-graySecondary  hover:text-whiteSecondary uppercase border-2  border-graySecondary"
+									className=" btn btn-empty py-2 px-7 text-graySecondary bg-whiteSecondary rounded-full   hover:bg-graySecondary  hover:text-whiteSecondary uppercase border-2  border-graySecondary text-sm lg:text-lg"
 								>
 									Add to Cart
 								</button>

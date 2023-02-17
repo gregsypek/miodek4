@@ -92,13 +92,13 @@ const PostDetails = ({ post, posts }) => {
 								  posts.slice(0, 3).map((post) => <LastPostMini post={post} key={post.title}/>)}
 						</ul>
 					</div>
-					<Image
+					{/* <Image
 						className="blog__jar self-center  -z-[1] mt-36"
 						src="/JAR-FLOWERS.png"
 						width={398}
 						height={377}
 						alt="jar with flowers honey"
-					></Image>
+					></Image> */}
 				</aside>
 			</section>
 		</>

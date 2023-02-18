@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {
@@ -7,6 +7,7 @@ import {
 	AiOutlineMenu,
 	AiOutlineShopping,
 } from "react-icons/ai";
+import styles from '../styles/navbar.module.css'
 
 import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
@@ -33,8 +34,18 @@ const Navbar = () => {
 	}, []);
 
 	function NavigationLink({ href, text, router }) {
+		// const isActive = router.asPath === (href === "/home" ? "/" : href);
 
-		const isActive = router.asPath === (href === "/home" ? "/" : href);
+		let isActive;
+		
+		if(!router.pathname.includes('[slug]')) {
+
+		 isActive = router.asPath === (href === "/home" ? "/" : href);
+		} else {	
+
+		isActive = router.asPath === (href  === '/blog' ? `/blog/${router.query.slug}` : '')
+		}
+		
 
 		return (
 			<>
@@ -44,11 +55,13 @@ const Navbar = () => {
 				passHref
 				basePath
 				className={`${
-					isActive && "active"
-				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary nav__link relative after:content-[url("../public/circle.svg")] after:bottom-0 after:-right-[125%] after:w-full after:h-full lg:after:bottom-[-36px] lg:after:left-[10px] lg:after:right-0`}
+					isActive && styles.active
+				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary relative  ${styles.nav__link} `}
 			>
 				{text}
 			</Link>
+			{}
+			
 			{/* after:content-link */}
 {/* <Image src="/circle.svg" alt="cirlce" width={25} height={25}/> */}
 			</>
@@ -69,7 +82,6 @@ const Navbar = () => {
 				<nav className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
 					{navigationRoutes.map((singleRoute) => {
 						return (
-
 							<NavigationLink
 								key={singleRoute}
 								href={`/${singleRoute}`}
@@ -98,12 +110,16 @@ const Navbar = () => {
 								items-end baseline m-24 ">
 									{navigationRoutes.map((singleRoute) => {
 						return (
+						
 							<NavigationLink
 								key={singleRoute}
 								href={`/${singleRoute}`}
 								text={singleRoute}
 								router={router}
+								onClick={() => setToggle(false)}
 							/>
+										
+							
 						);
 					})}							
 							</nav>

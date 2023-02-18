@@ -71,7 +71,7 @@ const Footer = () => {
 					</h3>
 
 					<form>
-						<div className="flex rounded-full bg-brownQuaternary text-brownPrimary  static">
+						<div className="flex  flex-col sm:flex-row rounded-full sm:bg-brownQuaternary text-brownPrimary gap-2 sm:gap-0 static">
 							<input
 								type="email"
 								className="flex-1 rounded-full focus:outline-none bg-brownQuaternary placeholder:text-graySecondary placeholder:font-thin py-2 px-7"

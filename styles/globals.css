@@ -63,13 +63,12 @@ footer {
 	}
 }
 /* show circle icon when active */
-.nav__link {
+/* .nav__link {
 	position: relative;
 }
 .nav__link::after {
 	position: absolute;
-	/* content it's styled by tailwind in Navbar Component */
-	/* content: url("../public/circle.svg"); */
+	content: url("../public/circle.svg");
 	bottom: 0;
 	right: -125%;
 	opacity: 0;
@@ -88,7 +87,7 @@ footer {
 
 .nav__link.active.nav__link::after {
 	opacity: 1;
-}
+} */
 
 .features__list {
 	justify-content: center;

@@ -9,7 +9,7 @@ const HeroBanner = ({ heroBanner }) => {
 			<section id="sale" className="mt-56 container px-7 mx-auto ">
 				<div className="container gradient gap-y-20 items-center md:items-stretch py-8 mx-auto mt-32 px-20 flex flex-col md:flex-row justify-between content-center rounded-[25px]">
 					<div className="left flex flex-col justify-evenly gap-y-5 items-center md:items-start ">
-						<h2 className="uppercase font-bold text-orangePrimary text-3xl">
+						<h2 className="uppercase  font-bold text-orangePrimary text-center md:text-left text-3xl">
 							{heroBanner.largeText}
 						</h2>
 						<p className="uppercase font-bold text-whitePrimary text-2xl">

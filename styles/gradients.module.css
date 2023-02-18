@@ -92,7 +92,7 @@
 }
 
 
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
 	.blog::before {
 		position: absolute;
 		content: url("../public/JAR-FLOWERS.png");
@@ -102,7 +102,7 @@
 		width: auto;
 		z-index: 1;
 	}
-}
+} */
 
 
 /* ---------- OFFER --------- */

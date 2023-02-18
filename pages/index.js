@@ -94,14 +94,15 @@ const Home = ({ bannerData, testimonials }) => {
 
 				<div className="features__bottom -mt-20 md:mt-16">
 					<div className="container mx-auto flex flex-col md:flex-row items-center">
-						<div className="h-[550px] w-full lg:w-5/12 flex items-center">
-							<picture className="">
+						<div className="h-[550px] w-full lg:w-5/12 flex items-center flex-grow">
+							<picture className="w-full md:h-full">
 								<Image
-									className=" w-full self-center jar jar--rapeseed relative -z-[1]"
+									className="   self-center jar jar--rapeseed relative -z-[1]"
 									src="/JAR-FLOWERS.png"
 									width={398}
 									height={377}
 									alt="jar with flowers honey"
+
 								></Image>
 							</picture>
 						</div>

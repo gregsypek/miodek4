@@ -6,25 +6,25 @@ import { useStateContext } from "../context/StateContext";
 const Footer = () => {
 	const { showCart, toggle } = useStateContext();
 	return (
-		<footer className=" mx-auto pb-7 mt-20 static">
-			<hr className=" container px-7 mx-auto border-t-grayPrimary my-24 " />
+		<footer className="static mx-auto mt-20 pb-7">
+			<hr className="container mx-auto my-24 px-7 border-t-grayPrimary" />
 			<div
 				className={`footer__container container mx-auto pb-7 flex flex-col md:flex-row flex-wrap lg:px-7  md:justify-evenly gap-8 md:space-y-16 md:space-x-32  md:-mt-16   items-center md:items-baseline ${
 					showCart ? "hidden" : "relative"
 				} ${toggle ? "hidden" : ""}`}
 			>
-				<div className="flex flex-col space-y-3 items-center md:items-start text-graySecondary lowercase">
+				<div className="flex flex-col items-center space-y-3 lowercase md:items-start text-graySecondary">
 					<Link href="/">
 						<Image
 							src="/logo-small.svg"
 							width={100}
 							height={20}
 							alt="small logo"
-							className="footer__logo h-auto"
+							className="h-auto footer__logo"
 						/>
 					</Link>
-					
-					<Link href="/" className="hover:text-orangePrimary pt-5 ">
+
+					<Link href="/" className="pt-5 hover:text-orangePrimary ">
 						Home
 					</Link>
 					<Link href="/about" className="hover:text-orangePrimary ">
@@ -37,50 +37,70 @@ const Footer = () => {
 						Offer
 					</Link>
 				</div>
-				<div className="flex flex-col space-y-3 text-graySecondary lowercase items-center md:items-start ">
-					<h3 className="font-bold text-xl lowercase mb-5 ">contact</h3>
-					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
+				<div className="flex flex-col items-center space-y-3 lowercase text-graySecondary md:items-start ">
+					<h3 className="mb-5 text-xl font-bold lowercase ">contact</h3>
+					<Link
+						href="#"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
 						Email
 					</Link>
-					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
+					<Link
+						href="#"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
 						Linkedin
 					</Link>
-					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
+					<Link
+						href="#"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
 						Instagram
 					</Link>
-					<Link href="#" className="hover:text-orangePrimary text-graySecondary">
+					<Link
+						href="#"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
 						Twitter
 					</Link>
 				</div>
-				<div className="flex flex-col space-y-3 text-graySecondary lowercase items-center md:items-start">
-					<h3 className="text-bold text-xl lowercase  mb-5 ">market</h3>
-					<Link href="/payments" className="hover:text-orangePrimary text-graySecondary">
-					payment methods
+				<div className="flex flex-col items-center space-y-3 lowercase text-graySecondary md:items-start">
+					<h3 className="mb-5 text-xl lowercase text-bold ">market</h3>
+					<Link
+						href="/payments"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
+						payment methods
 					</Link>
-					<Link href="/rules" className="hover:text-orangePrimary text-graySecondary">
-					rules and regulations
+					<Link
+						href="/rules"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
+						rules and regulations
 					</Link>
-					<Link href="/privacy" className="hover:text-orangePrimary text-graySecondary">
+					<Link
+						href="/privacy"
+						className="hover:text-orangePrimary text-graySecondary"
+					>
 						privacy policy
 					</Link>
-			
 				</div>
-				<div className="flex flex-col space-y-3 text-graySecondary lowercase items-center md:items-start ">
-					<h3 className="text-bold text-xl lowercase mb-5 ">
+				<div className="flex flex-col items-center space-y-3 lowercase text-graySecondary md:items-start ">
+					<h3 className="mb-5 text-xl lowercase text-bold ">
 						join our newsletter
 					</h3>
 
 					<form>
-						<div className="flex  flex-col sm:flex-row rounded-full sm:bg-brownQuaternary text-brownPrimary gap-2 sm:gap-0 static">
+						<div className="static flex flex-col gap-2 rounded-full sm:flex-row sm:bg-orangeQuaternary text-brownPrimary sm:gap-0">
 							<input
 								type="email"
-								className="flex-1 rounded-full focus:outline-none bg-brownQuaternary placeholder:text-graySecondary placeholder:font-thin py-2 px-7"
+								className="flex-1 py-2 rounded-full focus:outline-none bg-orangeQuaternary placeholder:text-graySecondary placeholder:font-thin px-7"
 								placeholder="Email Address "
 							/>
 							<input
 								type="submit"
 								value="Submit"
-								className="py-2 px-7 bg-brownPrimary rounded-full text-whiteSecondary hover:bg-blackPrimary uppercase hover:cursor-pointer"
+								className="py-2 uppercase rounded-full px-7 bg-brownPrimary text-whiteSecondary hover:bg-blackPrimary hover:cursor-pointer"
 							/>
 						</div>
 					</form>

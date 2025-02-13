@@ -7,19 +7,18 @@ import {
 	AiOutlineMenu,
 	AiOutlineShopping,
 } from "react-icons/ai";
-import styles from '../styles/navbar.module.css'
+import styles from "../styles/navbar.module.css";
 
 import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
 
-
 const navigationRoutes = ["home", "about", "blog", "offer"];
 
 const Navbar = () => {
-	const { showCart, setShowCart, totalQuantities, toggle, setToggle } = useStateContext();
+	const { showCart, setShowCart, totalQuantities, toggle, setToggle } =
+		useStateContext();
 	const router = useRouter();
 	const [show, handleShow] = useState(false);
-
 
 	const transitionNavBar = () => {
 		if (window.scrollY > 30) {
@@ -37,114 +36,116 @@ const Navbar = () => {
 		// const isActive = router.asPath === (href === "/home" ? "/" : href);
 
 		let isActive;
-		
-		if(!router.pathname.includes('[slug]')) {
 
-		 isActive = router.asPath === (href === "/home" ? "/" : href);
-		} else {	
-
-		isActive = router.asPath === (href  === '/blog' ? `/blog/${router.query.slug}` : '')
+		if (!router.pathname.includes("[slug]")) {
+			isActive = router.asPath === (href === "/home" ? "/" : href);
+		} else {
+			isActive =
+				router.asPath ===
+				(href === "/blog" ? `/blog/${router.query.slug}` : "");
 		}
-		
 
 		return (
 			<>
+				<Link
+					href={href === "/home" ? "/" : href}
+					passHref
+					basePath
+					className={`${
+						isActive && styles.active
+					} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary relative  ${
+						styles.nav__link
+					} `}
+					onClick={() => setToggle(false)}
+				>
+					{text}
+				</Link>
+				{}
 
-			<Link
-				href={href === "/home" ? "/" : href}
-				passHref
-				basePath
-				className={`${
-					isActive && styles.active
-				} text-orangePrimary hover:cursor-pointer  hover:text-blackSecondary relative  ${styles.nav__link} `}
-			>
-				{text}
-			</Link>
-			{}
-			
-			{/* after:content-link */}
-{/* <Image src="/circle.svg" alt="cirlce" width={25} height={25}/> */}
+				{/* after:content-link */}
+				{/* <Image src="/circle.svg" alt="cirlce" width={25} height={25}/> */}
 			</>
 		);
 	}
 
 	return (
-<>
+		<>
+			<div
+				className={`fixed w-screen ${
+					show && "bg-white shadow-sm"
+				} z-40  top-0 `}
+			>
+				<div className="flex items-center justify-between px-8 mx-auto ">
+					{/* Logo */}
+					<Link href="/">
+						<Image src="/logo.svg" width={100} height={20} alt="image" />
+					</Link>
 
-			<div className={`fixed w-screen ${show && 'bg-white shadow-sm'} z-40  top-0 `}>
-			<div className=" px-8 mx-auto flex items-center justify-between">
-				{/* Logo */}
-				<Link href="/">
-					<Image src="/logo.svg" width={100} height={20} alt="image" />
-				</Link>
+					{/* Menu Items */}
+					<nav className="hidden text-sm uppercase md:flex space-x-14 lg:space-x-20 ">
+						{navigationRoutes.map((singleRoute) => {
+							return (
+								<NavigationLink
+									key={singleRoute}
+									href={`/${singleRoute}`}
+									text={singleRoute}
+									router={router}
+								/>
+							);
+						})}
+					</nav>
+					{/* mobile nav */}
+					<nav className="order-2 md:hidden">
+						<button
+							id="menu-btn"
+							className="block cursor-pointer open md:hidden focus:outline-none"
+							onClick={() => setToggle(true)}
+						>
+							<AiOutlineMenu className="w-6 h-6 text-brownPrimary" />
+						</button>
 
-				{/* Menu Items */}
-				<nav className="text-sm hidden md:flex space-x-14 lg:space-x-20 uppercase ">
-					{navigationRoutes.map((singleRoute) => {
-						return (
-							<NavigationLink
-								key={singleRoute}
-								href={`/${singleRoute}`}
-								text={singleRoute}
-								router={router}
-							/>
-						);
-					})}
-				</nav>
-				{/* mobile nav */}
-				<nav className="order-2 md:hidden">
+						{toggle && (
+							<div className="fixed top-0 right-0 z-50 w-screen h-screen overflow-y-hidden transition-all bg-gradientRGBA ">
+								<div className="relative float-right w-7/12 h-full px-6 py-10 overflow-auto bg-white">
+									<AiOutlineClose
+										className="absolute right-0 w-6 h-6 mr-6 cursor-pointer text-brownPrimary top-6 hover:"
+										onClick={() => setToggle(false)}
+									/>
+									<nav className="flex flex-col items-end m-24 text-xl uppercase space-y-14 baseline ">
+										{navigationRoutes.map((singleRoute) => {
+											return (
+												<NavigationLink
+													key={singleRoute}
+													href={`/${singleRoute}`}
+													text={singleRoute}
+													router={router}
+													onClick={() => setToggle(false)}
+												/>
+											);
+										})}
+									</nav>
+								</div>
+							</div>
+						)}
+					</nav>
+
 					<button
-						id="menu-btn"
-						className="open block cursor-pointer md:hidden  focus:outline-none"
-						onClick={() => setToggle(true)}
+						type="button"
+						className="relative md:order-1"
+						onClick={() => setShowCart(true)}
 					>
-						<AiOutlineMenu className="w-6 h-6 text-brownPrimary" />
+						<AiOutlineShopping color="#A74E12" size="1.7em" />
+						<span className="absolute flex justify-center w-5 h-5 text-sm align-middle rounded-full cart-tem-qty bg-orangePrimary text-whitePrimary -right-2 -top-1">
+							{totalQuantities}
+						</span>
 					</button>
 
-					{toggle && (
-						<div className="w-screen h-screen bg-gradientRGBA fixed right-0 top-0 z-50 transition-all overflow-y-hidden " >
-					
-							<div className="h-full w-7/12  bg-white relative float-right py-10 px-6 overflow-auto">
-							<AiOutlineClose className="w-6 h-6 text-brownPrimary absolute right-0 top-6 mr-6 hover: cursor-pointer" onClick={() => setToggle(false) }/>
-								<nav className="text-xl flex flex-col space-y-14 uppercase
-								items-end baseline m-24 ">
-									{navigationRoutes.map((singleRoute) => {
-						return (
-						
-							<NavigationLink
-								key={singleRoute}
-								href={`/${singleRoute}`}
-								text={singleRoute}
-								router={router}
-								onClick={() => setToggle(false)}
-							/>
-										
-							
-						);
-					})}							
-							</nav>
-						</div>
-						</div>
-					)}			
-				</nav>
+					{showCart && <Cart />}
+				</div>
 
-				<button
-					type="button"
-					className="relative md:order-1"
-					onClick={() => setShowCart(true)}					
-				>
-					<AiOutlineShopping color="#A74E12" size="1.7em" />
-					<span className="cart-tem-qty absolute bg-orangePrimary text-whitePrimary rounded-full -right-2 -top-1 w-5 h-5 flex justify-center align-middle text-sm">
-						{totalQuantities}
-					</span>
-				</button>
-
-				{showCart && <Cart />}
-			</div>		
-
-			{/* <hr className="border-t-grayPrimary relative -z-[20]" /> */}
-</div>
-</>
+				{/* <hr className="border-t-grayPrimary relative -z-[20]" /> */}
+			</div>
+		</>
 	);
 };
 
